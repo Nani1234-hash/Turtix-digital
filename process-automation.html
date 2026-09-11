@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Process Automation | Turtix Digital</title>
+ <link rel="icon" type="image/png" sizes="32x32" href="logo3.png">
+<link rel="icon" type="image/png" sizes="16x16" href="logo3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="logo3.png">
+<meta name="description" content="Turtix helps businesses identify repetitive work and automate the workflows behind it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+:root{--ink:#171717;--muted:#68655e;--paper:#f4f1ea;--cream:#e7e2d8;--line:#c9c4b9;--white:#fff;--accent:#d9ff4f;}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}a{text-decoration:none;color:inherit}img{display:block;width:100%}
+.navbar{position:sticky;top:0;left:0;width:100%;z-index:50;padding:18px 5.5%;display:flex;align-items:center;justify-content:space-between;background:rgba(244,241,234,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(23,23,23,.08);color:var(--ink)}.brand{display:flex;align-items:center;gap:13px}.brand-logo{width:48px;height:48px;object-fit:contain;flex:0 0 48px}.brand-copy{display:flex;flex-direction:column;justify-content:center}.logo{font:700 34px/.9 "Bricolage Grotesque",sans-serif;letter-spacing:-1.8px;color:#171717}.brand-tagline{font:500 8px/1 "Martian Mono",monospace;letter-spacing:.08em;margin-top:7px;color:#171717;opacity:1}.nav-right{display:flex;align-items:center;gap:32px;font-size:18px;font-weight:500;color:#171717}.nav-right a{transition:opacity .25s}.nav-right a:hover{opacity:.55}.nav-contact{border:1px solid rgba(23,23,23,.45);border-radius:999px;padding:11px 19px!important}.nav-contact:hover{background:#171717;color:#fff;opacity:1!important}
+.hero{min-height:100vh;padding:180px 5.5% 85px;display:flex;align-items:flex-end;position:relative;overflow:hidden;color:#fff;background:linear-gradient(90deg,rgba(8,8,8,.72),rgba(8,8,8,.25)),url('assets/process11.png') center/cover no-repeat}.hero:after{content:"";position:absolute;inset:auto 0 0;height:38%;background:linear-gradient(transparent,rgba(0,0,0,.72));pointer-events:none}.hero-content{position:relative;z-index:2;max-width:1050px}.eyebrow,.section-label{font:500 10px/1 "Martian Mono",monospace;letter-spacing:2px;text-transform:uppercase}.eyebrow{margin-bottom:25px;color:rgba(255,255,255,.75)}.hero h1{font:400 clamp(52px,7.5vw,108px)/.93 "Bricolage Grotesque",sans-serif;letter-spacing:-5px;max-width:1050px;margin-bottom:30px}.hero-copy{max-width:610px;font-size:17px;line-height:1.7;color:rgba(255,255,255,.82);margin-bottom:32px}.hero-copy p+p{margin-top:10px}.btn{display:inline-flex;align-items:center;gap:15px;padding:15px 23px;border-radius:999px;font-size:13px;font-weight:600;transition:.3s}.primary{background:#fff;color:var(--ink)}.primary:hover{transform:translateY(-3px);background:var(--accent)}.arrow{font-size:18px;line-height:1}
+section{padding:125px 5.5%}.intro{background:#171717;color:#fff;position:relative;overflow:hidden}.intro:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.35)),url('https://877522-43269d4ea984?auto=format&fit=crop&w=2200&q=85') center/cover no-repeat;opacity:.55}.intro-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:end}.intro .section-label{color:#999;margin-bottom:24px}.intro h2{font:500 clamp(46px,5.6vw,78px)/.98 "Bricolage Grotesque",sans-serif;letter-spacing:-3.5px;max-width:850px}.intro-copy{max-width:560px;color:#c8c8c8;font-size:17px;line-height:1.85}.intro-copy p+p{margin-top:18px}.outline-btn{margin-top:30px;border:1px solid rgba(255,255,255,.45);color:#fff}.outline-btn:hover{background:#fff;color:var(--ink);transform:translateY(-3px)}
+.services{background:var(--paper)}.section-label.dark{color:#74716b;margin-bottom:24px}.section-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:62px}.section-head h2{font:500 clamp(44px,5.4vw,74px)/1 "Bricolage Grotesque",sans-serif;letter-spacing:-3px;max-width:900px}.section-head p{max-width:330px;color:var(--muted);font-size:14px;line-height:1.75}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.service-card{position:relative;min-height:440px;border-radius:24px;overflow:hidden;background:#1b1b1b;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;border:1px solid rgba(0,0,0,.12);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s}.service-card:hover{transform:translateY(-8px);box-shadow:0 25px 55px rgba(0,0,0,.15)}.service-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s ease}.service-card:hover img{transform:scale(1.05)}.service-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 20%,rgba(0,0,0,.18) 45%,rgba(0,0,0,.88) 100%)}.service-body{position:relative;z-index:2;padding:30px}.number{width:40px;height:40px;border:1px solid rgba(255,255,255,.5);border-radius:50%;display:grid;place-items:center;font:500 10px "Martian Mono",monospace;margin-bottom:70px;background:rgba(0,0,0,.14);backdrop-filter:blur(5px)}.service-card h3{font:500 31px/1.02 "Bricolage Grotesque",sans-serif;letter-spacing:-1.3px;max-width:320px}.service-card p{font-size:14px;line-height:1.65;color:rgba(255,255,255,.8);margin-top:14px;max-width:320px}
+.examples{background:var(--cream)}.example-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.example-card{position:relative;min-height:360px;border-radius:24px;overflow:hidden;background:#171717;color:#fff}.example-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.example-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.78))}.example-content{position:absolute;z-index:2;left:30px;right:30px;bottom:30px}.example-tag{display:inline-flex;border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:8px 12px;font:500 9px "Martian Mono",monospace;letter-spacing:1.4px;text-transform:uppercase;background:rgba(0,0,0,.16);backdrop-filter:blur(6px);margin-bottom:20px}.example-content h3{font:500 clamp(28px,3vw,42px)/1.04 "Bricolage Grotesque",sans-serif;letter-spacing:-1.6px;max-width:620px}.example-content p{margin-top:12px;max-width:590px;color:rgba(255,255,255,.82);font-size:14px;line-height:1.7}.example-card:nth-child(5){grid-column:span 2}
+.process{background:var(--paper);padding-top:118px;padding-bottom:125px}.process .section-head{margin-bottom:54px}.process-list{border:0;margin-top:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;align-items:stretch}.process-step{position:relative;display:flex;flex-direction:column;gap:0;min-width:0;min-height:520px;padding:0;overflow:hidden;border:1px solid #d7d2c8;border-radius:23px;background:#f8f6f1;box-shadow:0 1px 0 rgba(23,23,23,.02);transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s ease}.process-step:before{content:"";position:absolute;width:210px;height:210px;border:1px solid rgba(23,23,23,.08);border-radius:50%;right:-112px;top:238px;pointer-events:none}.process-step:after{content:"";position:absolute;width:125px;height:125px;border:1px solid rgba(23,23,23,.06);border-radius:50%;right:-72px;top:282px;pointer-events:none}.process-step:hover{transform:translateY(-8px);box-shadow:0 22px 45px rgba(23,23,23,.10)}.process-img{order:0;position:relative;width:100%;height:174px;border-radius:0;overflow:hidden;flex:0 0 174px}.process-img img{width:100%;height:100%;object-fit:cover;transition:transform .65s ease}.process-step:hover .process-img img{transform:scale(1.06)}.process-img:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.25))}.process-badge{position:absolute;z-index:2;left:18px;bottom:17px;padding:8px 12px;border:1px solid rgba(255,255,255,.65);border-radius:999px;background:rgba(25,25,25,.30);backdrop-filter:blur(8px);color:#fff;font:500 9px "Martian Mono",monospace;letter-spacing:1.3px;text-transform:uppercase}.process-body{position:relative;z-index:2;display:flex;flex-direction:column;flex:1;padding:26px 25px 24px}.process-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:25px}.process-number{width:54px;height:54px;border:1px solid #d3cec4;border-radius:50%;display:grid;place-items:center;font:500 11px "Martian Mono",monospace;color:#514e48;background:#faf8f3}.process-arrow{width:48px;height:48px;border:1px solid #d3cec4;border-radius:50%;display:grid;place-items:center;font-size:22px;line-height:1;color:#292722;transition:.3s}.process-step:hover .process-arrow{transform:translate(3px,-3px);background:#171717;color:#fff;border-color:#171717}.process-step h3{font:500 32px/1.02 "Bricolage Grotesque",sans-serif;letter-spacing:-1.4px;color:#171717;margin-bottom:18px}.process-step p{font-size:14px;color:#5f5c56;line-height:1.75;max-width:260px}.process-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;padding-top:0px}.process-tag{display:inline-flex;align-items:center;border:1px solid #d5d0c6;border-radius:999px;padding:8px 11px;background:#faf8f3;color:#625f58;font-size:11px;line-height:1}.process-step:nth-child(1) .process-img img{filter:saturate(.9)}.process-step:nth-child(2) .process-img img{filter:grayscale(.8)}
+.cta{min-height:620px;display:grid;place-items:center;text-align:center;color:#fff;position:relative;overflow:hidden;background:#111}.cta:before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(5,7,8,.68),rgba(5,7,8,.84)),url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=2200&q=88') center/cover no-repeat}.cta-content{position:relative;z-index:2;max-width:1000px}.cta h2{font:500 clamp(50px,7vw,96px)/.94 "Bricolage Grotesque",sans-serif;letter-spacing:-4px;margin-bottom:36px}.cta .btn{background:#fff;color:#171717}.cta .btn:hover{transform:translateY(-3px);background:var(--accent)}
+.enquiry{background:var(--cream)}.enquiry-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:.8fr 1.2fr;gap:100px}.enquiry h2{font:500 clamp(42px,5vw,68px)/.98 "Bricolage Grotesque",sans-serif;letter-spacing:-3px}.enquiry-intro p{max-width:450px;color:#65625c;line-height:1.8;font-size:15px;margin-top:24px}.enquiry-form{border-top:1px solid #aaa69d}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}.form-group{margin-top:23px}.form-group label{display:block;font-size:11px;font-weight:600;margin-bottom:8px}.form-group input,.form-group select,.form-group textarea{width:100%;border:1px solid #aaa69d;background:transparent;padding:14px 15px;font:14px Inter,sans-serif;color:var(--ink);outline:none;border-radius:0}.form-group textarea{resize:vertical}.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:#171717}.form-submit{margin-top:30px;border:0;cursor:pointer;background:#171717;color:#fff}.form-submit:hover{transform:translateY(-3px);background:#333}
+footer{padding:28px 5.5%;background:#171717;color:#888;border-top:1px solid #333;display:flex;justify-content:space-between;font-size:11px}footer strong{color:#fff}
+@media(max-width:1000px){.nav-right a:not(.nav-contact){display:none}.intro-inner,.enquiry-grid{grid-template-columns:1fr;gap:50px}.service-grid{grid-template-columns:repeat(2,1fr)}.process-list{grid-template-columns:repeat(2,minmax(0,1fr))}.process-step{min-height:520px!important}.process-step p{max-width:none}.section-head{display:block}.section-head p{margin-top:22px}.example-card:nth-child(5){grid-column:span 1}}
+@media(max-width:700px){.navbar{padding:20px 5%}.brand-mark{width:40px;height:40px}.logo{font-size:29px}.brand-tagline{font-size:7px}.hero{min-height:780px;padding:150px 5% 70px;background-position:58% center}.hero h1{font-size:54px;letter-spacing:-2.8px}.hero-copy{font-size:15px}.hero .btn{width:100%;justify-content:center}.intro-inner{gap:35px}.intro h2{font-size:47px;letter-spacing:-2.3px}.intro-copy{font-size:15px}.service-grid,.example-grid{grid-template-columns:1fr}.service-card{min-height:390px}.example-card{min-height:350px}.process-step{grid-template-columns:42px 1fr;gap:15px;padding:24px 0}.process-step p{grid-column:2}.process-img{grid-column:2;height:150px}.cta{min-height:540px;padding:90px 5%}.cta h2{font-size:53px;letter-spacing:-2.6px}.enquiry-grid{gap:45px}.form-row{grid-template-columns:1fr}.enquiry{padding-top:90px;padding-bottom:90px}footer{flex-direction:column;gap:8px}}
+
+@media(max-width:1150px){.process-list{grid-template-columns:repeat(3,minmax(0,1fr))}.process-step{min-height:520px !important}}
+@media(max-width:900px){.process-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.navbar{padding:14px 5%}.brand-logo{width:42px;height:42px;flex-basis:42px}.logo{font-size:28px}.brand-tagline{font-size:7px}.nav-right{gap:10px}.nav-right a:not(.nav-contact){display:none}.nav-contact{padding:9px 13px!important}.process{padding-top:90px}.process-list{grid-template-columns:1fr}.process-step{min-height:520px}.process-img{height:185px;flex-basis:185px}.process-body{padding:24px 22px 22px}.process-step h3{font-size:31px}}
+
+@media(max-width:700px){.brand-logo{width:42px!important;height:42px!important;flex:0 0 42px}.brand-copy{display:flex!important}.logo{color:#171717!important}.brand-tagline{color:#171717!important}}
+/* =========================================
+   PROCESS AUTOMATION HERO
+   ========================================= */
+
+.hero {
+    position: relative !important;
+    min-height: 670px !important;
+}
+
+/* Move all hero content toward the top */
+.hero-content {
+    position: absolute !important;
+
+    top: 70px !important;
+    left: 6% !important;
+
+    width: 65% !important;
+    max-width: 900px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    z-index: 5 !important;
+}
+
+/* Smaller main heading */
+.hero-content h1 {
+    font-size: clamp(58px, 6vw, 82px) !important;
+    line-height: 0.95 !important;
+    letter-spacing: -3px !important;
+
+    margin-top: 35px !important;
+    margin-bottom: 35px !important;
+}
+
+/* Paragraph text */
+.hero-content .hero-copy {
+    max-width: 650px !important;
+}
+
+.hero-content .hero-copy p {
+    font-size: 17px !important;
+    line-height: 1.7 !important;
+}
+
+/* Button */
+.hero-content .btn.primary {
+    margin-top: 28px !important;
+}
+
+
+/* =========================================
+   SMALLER TYPOGRAPHY — KEEP ALL ORIGINAL CODE
+   ========================================= */
+body{font-size:14px}
+.nav-right{font-size:18px}
+.logo{font-size:40px}
+.brand-tagline{font-size:7px}
+.nav-contact{padding:10px 17px!important}
+
+.hero-content h1{font-size:clamp(46px,5.4vw,76px)!important;letter-spacing:-2.6px!important}
+.hero-content .hero-copy p{font-size:15px!important;line-height:1.65!important}
+.hero-content .btn{font-size:11px!important;padding:13px 20px!important}
+.hero-content .arrow{font-size:16px!important}
+
+.intro h2{font-size:clamp(38px,4.8vw,64px)!important;letter-spacing:-2.8px!important}
+.intro-copy{font-size:15px!important}
+
+.section-head h2{font-size:clamp(37px,4.7vw,61px)!important;letter-spacing:-2.5px!important}
+.section-head p{font-size:12px!important}
+
+.service-card h3{font-size:27px!important;letter-spacing:-1.1px!important}
+.service-card p{font-size:12px!important}
+.number{width:38px!important;height:38px!important;font-size:9px!important}
+
+.example-content h3{font-size:clamp(24px,2.7vw,36px)!important;letter-spacing:-1.3px!important}
+.example-content p{font-size:12px!important}
+.example-tag{font-size:8px!important;padding:7px 10px!important}
+
+.process-step h3{font-size:27px!important;letter-spacing:-1.2px!important}
+.process-step p{font-size:12px!important}
+.process-number{width:48px!important;height:48px!important;font-size:10px!important}
+.process-arrow{width:42px!important;height:42px!important;font-size:19px!important}
+.process-badge{font-size:8px!important}
+.process-tag{font-size:10px!important;padding:7px 10px!important}
+
+.cta h2{font-size:clamp(42px,6.2vw,80px)!important;letter-spacing:-3.2px!important}
+
+.enquiry h2{font-size:clamp(36px,4.5vw,58px)!important;letter-spacing:-2.5px!important}
+.enquiry-intro p{font-size:13px!important}
+.form-group label{font-size:10px!important}
+.form-group input,.form-group select,.form-group textarea{font-size:12px!important;padding:12px 13px!important}
+
+footer{font-size:10px!important}
+
+@media(max-width:700px){
+.logo{font-size:25px!important}.brand-tagline{font-size:6px!important}.nav-contact{padding:8px 12px!important}
+.hero h1,.hero-content h1{font-size:46px!important;letter-spacing:-2.3px!important}
+.hero-copy,.hero-content .hero-copy p{font-size:13px!important}
+.hero .btn,.hero-content .btn{font-size:10px!important;padding:12px 17px!important}
+.intro h2{font-size:39px!important}.intro-copy{font-size:13px!important}
+.section-head h2{font-size:38px!important}.section-head p{font-size:11px!important}
+.service-card h3{font-size:24px!important}.service-card p{font-size:11px!important}
+.example-content h3{font-size:23px!important}.example-content p{font-size:11px!important}
+.process-step h3{font-size:24px!important}.process-step p{font-size:11px!important}.process-tag{font-size:9px!important}
+.cta h2{font-size:45px!important}.enquiry h2{font-size:35px!important}.enquiry-intro p{font-size:12px!important}
+footer{font-size:9px!important}
+}
+@media(max-width:400px){
+.logo{font-size:23px!important}.hero h1,.hero-content h1{font-size:40px!important}
+.intro h2{font-size:34px!important}.section-head h2{font-size:33px!important}
+.cta h2{font-size:39px!important}.enquiry h2{font-size:31px!important}
+}
+
+</style>
+</head>
+<body id="top">
+<header class="navbar">
+<a href="#top" class="brand" aria-label="Turtix Digital home"><img class="brand-logo" src="assets/logo3.png" alt="Turtix logo"><span class="brand-copy"><span class="logo">Turtix</span></span></a>
+<nav class="nav-right"><a href="#services">Services</a><a href="#process">Process</a><a href="#examples">Use cases</a><a href="#enquiry" class="nav-contact">Contact Us</a></nav>
+</header>
+<main id="top">
+<section class="hero">
+<div class="hero-content">
+<div class="eyebrow">Process Automation</div>
+<h1>Stop making people do what software can do.</h1>
+<div class="hero-copy"><p>If your team is still moving data between spreadsheets, emails, forms and systems manually, there is probably a better way.</p><p>Turtix helps businesses identify repetitive work and automate the workflows behind it.</p></div>
+<a href="#enquiry" class="btn primary">Find What We Can Automate <span class="arrow">→</span></a>
+</div>
+</section>
+<section class="intro">
+<div class="intro-inner"><div><div class="section-label">The problem</div><h2>Manual work quietly becomes expensive.</h2></div><div class="intro-copy"><p>A few minutes here. A spreadsheet there. One person checking another person's work.</p><p>Over time, these become operational costs, delays and avoidable errors. We look at how work actually moves through your business and identify where technology can remove the friction.</p><a href="#enquiry" class="btn outline-btn">Find What We Can Automate <span class="arrow">→</span></a></div></div>
+</section>
+<section class="services" id="services">
+<div class="section-label dark">What we automate</div>
+<div class="section-head"><h2>Practical automation built around how your business actually works.</h2><p>We connect the tools you already use and remove the repetitive steps that slow teams down.</p></div>
+<div class="service-grid">
+<article class="service-card"><img src="assets/workflow2.png" alt="Laptop and digital workflow"><div class="service-body"><div class="number">01</div><h3>Workflow Automation</h3><p>Automate repetitive business processes and approvals.</p></div></article>
+<article class="service-card"><img src="assets/backend1.png.jpeg" alt="Team working with technology"><div class="service-body"><div class="number">02</div><h3>Backend Automation</h3><p>Automate data processing and system-level tasks.</p></div></article>
+<article class="service-card"><img src="assets/inter1.png.jpeg" alt="Technology collaboration"><div class="service-body"><div class="number">03</div><h3>Integrations</h3><p>Connect the tools your teams already use.</p></div></article>
+<article class="service-card"><img src="assets/tur.png" alt="Business team collaboration"><div class="service-body"><div class="number">04</div><h3>Third-party Integrations</h3><p>Bring disconnected systems together.</p></div></article>
+<article class="service-card"><img src="assets/tools.png" alt="Modern workspace"><div class="service-body"><div class="number">05</div><h3>Internal Tools</h3><p>Build lightweight tools around your actual workflow.</p></div></article>
+<article class="service-card"><img src="assets/notifi.png" alt="Analytics dashboard"><div class="service-body"><div class="number">06</div><h3>Reporting &amp; Notifications</h3><p>Automate alerts, reports and recurring information flows.</p></div></article>
+</div>
+</section>
+<section class="examples" id="examples">
+<div class="section-label dark">Where automation helps</div><div class="section-head"><h2>Remove repetitive work from the workflows that matter most.</h2><p>Real-world flows where automation can reduce handoffs, errors and unnecessary follow-ups.</p></div>
+<div class="example-grid">
+<article class="example-card"><img src="assets/lead.png" alt="Sales team meeting"><div class="example-content"><div class="example-tag">Sales</div><h3>Lead capture → qualification → assignment → follow-up</h3><p>Reduce manual handoffs and make sure every lead reaches the right person at the right time.</p></div></article>
+<article class="example-card"><img src="assets/screen1.png" alt="Team planning together"><div class="example-content"><div class="example-tag">HR</div><h3>Candidate application → screening → interview → communication</h3><p>Keep candidate information moving while automating routine communication and coordination.</p></div></article>
+<article class="example-card"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=85" alt="Operations team"><div class="example-content"><div class="example-tag">Operations</div><h3>Request → approval → processing → notification</h3><p>Create consistent workflows that reduce delays, missed steps and unnecessary follow-ups.</p></div></article>
+<article class="example-card"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=85" alt="Financial analytics"><div class="example-content"><div class="example-tag">Finance</div><h3>Data collection → validation → reconciliation → reporting</h3><p>Move financial information through repeatable processes with fewer manual checks.</p></div></article>
+<article class="example-card"><img src="assets/for.png" alt="Customer support technology"><div class="example-content"><div class="example-tag">Customer Support</div><h3>Ticket → assignment → escalation → resolution</h3><p>Automate routing, notifications and escalation so support teams can focus on customers.</p></div></article>
+</div>
+</section>
+<section class="process" id="process"><div class="section-label dark">Our approach</div><div class="section-head"><h2>We don't automate for the sake of automation.</h2><p>We first understand the process, then choose the simplest useful intervention.</p></div><div class="process-list"><article class="process-step"><div class="process-img"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=88" alt="Map process automation step"><span class="process-badge">Map</span></div><div class="process-body"><div class="process-top"><div class="process-number">01</div><div class="process-arrow">↗</div></div><h3>Map</h3><p>Understand the process and how work actually moves through your business.</p><div class="process-tags"><span class="process-tag">Discovery</span><span class="process-tag">Process map</span><span class="process-tag">Workflow</span></div></div></article><article class="process-step"><div class="process-img"><img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1000&q=88" alt="Identify process automation step"><span class="process-badge">Identify</span></div><div class="process-body"><div class="process-top"><div class="process-number">02</div><div class="process-arrow">↗</div></div><h3>Identify</h3><p>Find repetitive work, bottlenecks and avoidable manual steps.</p><div class="process-tags"><span class="process-tag">Analysis</span><span class="process-tag">Bottlenecks</span><span class="process-tag">Manual Work</span></div></div></article><article class="process-step"><div class="process-img"><img src="assets/design1.png" alt="Design process automation step"><span class="process-badge">Design</span></div><div class="process-body"><div class="process-top"><div class="process-number">03</div><div class="process-arrow">↗</div></div><h3>Design</h3><p>Choose where automation creates measurable value and design the simplest useful solution.</p><div class="process-tags"><span class="process-tag">Strategy</span><span class="process-tag">Solution</span><span class="process-tag">UX Flow</span></div></div></article><article class="process-step"><div class="process-img"><img src="assets/automation.png" alt="Automate process automation step"><span class="process-badge">Automate</span></div><div class="process-body"><div class="process-top"><div class="process-number">04</div><div class="process-arrow">↗</div></div><h3>Automate</h3><p>Build and connect the workflow around the tools your team already uses.</p><div class="process-tags"><span class="process-tag">Build</span><span class="process-tag">Integrations</span><span class="process-tag">Workflow</span></div></div></article><article class="process-step"><div class="process-img"><img src="assets/measure.png" alt="Measure process automation step"><span class="process-badge">Measure</span></div><div class="process-body"><div class="process-top"><div class="process-number">05</div><div class="process-arrow">↗</div></div><h3>Measure</h3><p>Track the impact and improve the workflow based on real results.</p><div class="process-tags"><span class="process-tag">Measure</span><span class="process-tag">Insights</span><span class="process-tag">Optimise</span></div></div></article></div></section>
+<section class="cta"><div class="cta-content"><h2>What could your team stop doing manually?<br>Let's find out.</h2><a href="#enquiry" class="btn">Find What We Can Automate <span class="arrow">→</span></a></div></section>
+<section class="enquiry" id="enquiry"><div class="enquiry-grid"><div class="enquiry-intro"><div class="section-label dark">Start a project</div><h2>Tell us what your team is still doing manually.</h2><p>Whether you're dealing with repetitive admin, manual handoffs, disconnected systems or recurring reporting, tell us how work happens today and we'll help identify where automation could help.</p></div><form class="enquiry-form" action="https://formsubmit.co/info@turtixdigital.com" method="POST"><input type="hidden" name="_subject" value="New Turtix Process Automation Enquiry"><input type="hidden" name="_captcha" value="false"><div class="form-row"><div class="form-group"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Your name" required></div><div class="form-group"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="you@example.com" required></div></div><div class="form-row"><div class="form-group"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" placeholder="+91 XXXXX XXXXX"></div><div class="form-group"><label for="company">Company</label><input id="company" name="company" type="text" placeholder="Company name"></div></div><div class="form-group"><label for="service">What do you need?</label><select id="service" name="service" required><option value="">Select a service</option><option>Workflow Automation</option><option>Backend Automation</option><option>Integrations</option><option>Internal Tools</option><option>Reporting &amp; Notifications</option><option>Process Automation</option><option>Other</option></select></div><div class="form-group"><label for="message">Tell us about your project</label><textarea id="message" name="message" rows="6" placeholder="Tell us about your business, project or idea..." required></textarea></div><button class="btn form-submit" type="submit">Send Enquiry <span class="arrow">→</span></button></form></div></section>
+</main>
+<footer><div>© 2026 <strong>Turtix Digital Solutions Pvt.Ltd.</strong></div><div>Innovate | Build | Scale.</div></footer>
+<script>
+const revealItems=document.querySelectorAll('.service-card,.example-card,.process-step');
+const revealObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.animate([{opacity:0,transform:'translateY(24px)'},{opacity:1,transform:'translateY(0)'}],{duration:650,easing:'cubic-bezier(.16,1,.3,1)',fill:'forwards'});revealObserver.unobserve(e.target)}}),{threshold:.08});
+revealItems.forEach(el=>revealObserver.observe(el));
+</script>
+</body>
+</html>

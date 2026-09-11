@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prototyping & MVP Development | Turtix Digital</title>
+  <meta name="description" content="Turtix Digital provides MVP development, prototype development and product prototyping for startups and businesses.">
+   <link rel="icon" type="image/png" sizes="32x32" href="logo3.png">
+<link rel="icon" type="image/png" sizes="16x16" href="logo3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="logo3.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,sans-serif;color:#171717;background:#f4f1eb;line-height:1.5}
+    a{color:inherit;text-decoration:none}
+    img{display:block;width:100%}
+    .container{width:min(1240px,88%);margin:auto}
+    /* NAV */
+    .navbar{
+      position:absolute;inset:0 0 auto;z-index:20;
+      padding:24px 6%;display:flex;justify-content:space-between;align-items:center
+    }
+
+    .brand{
+      display:flex;
+      flex-direction:row;
+      align-items:center;
+      gap:12px;
+      width:max-content;
+      line-height:1;
+      text-decoration:none;
+      color:#171717;
+    }
+
+    .brand-logo{
+      width:58px;
+      height:58px;
+      object-fit:contain;
+      display:block;
+      flex-shrink:0;
+    }
+
+    .brand-copy{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      justify-content:center;
+      padding-top:1px;
+    }
+
+    .logo{
+      display:block;
+      font-family:"Bricolage Grotesque",sans-serif;
+      font-size:40px;
+      line-height:.9;
+      font-weight:900;
+      letter-spacing:-1.5px;
+      color:#171717;
+      white-space:nowrap;
+    }
+
+    .logo-dot{
+      color:#171717;
+      margin-left:1px;
+    }
+
+    .brand-tagline{
+      display:block;
+      margin-top:6px;
+      font-family:"Martian Mono",monospace;
+      font-size:8px;
+      line-height:1;
+      font-weight:500;
+      letter-spacing:0;
+      color:#171717;
+      white-space:nowrap;
+    }
+
+    .nav-right{display:flex;gap:30px;align-items:center;font-size:15px;font-weight:900}
+    .nav-right a{transition:.25s}
+    .nav-right a:hover{opacity:.55}
+    .nav-contact{border:2px solid #171717;padding:10px 18px;border-radius:999px}
+
+
+    /* HERO — reference-inspired */
+    .hero{
+      min-height:100vh;padding:160px 6% 90px;display:flex;align-items:center;
+      position:relative;overflow:hidden;background:#e9e3d8
+    }
+    .hero:before{
+      content:"";position:absolute;inset:0;
+      background:
+      linear-gradient(
+    90deg,
+    rgba(233,227,216,.15) 0%,
+    rgba(233,227,216,.08) 35%,
+    rgba(233,227,216,0) 100%
+),
+        url("assets/home5.png.jpeg") center/cover;
+      opacity:1
+    }
+    .hero-content{position:relative;z-index:2;max-width:930px}
+    .eyebrow,.section-label{
+      font-size:8px;letter-spacing:2px;text-transform:uppercase;font-weight:500
+    }
+    .eyebrow{margin-bottom:28px;color:white}
+    .hero h1{
+      font:350 clamp(48px,6.5vw,69px)/.96 "Bricolage Grotesque";
+      letter-spacing:-3px;max-width:1000px;margin-bottom:36px;color:white
+    }
+    .hero-copy{
+      font-weight: 600;
+  max-width:650px;
+  font-size:14px;
+  line-height:1.7;
+  color:white !important;
+  margin-bottom:38px;
+  text-shadow:0 2px 10px rgba(0,0,0,.25);
+}
+    .hero-copy p+p{margin-top:15px}
+    .primary-btn,.intro-btn,.cta-btn,.form-submit{
+      display:inline-flex;align-items:center;gap:14px;border-radius:999px;
+      font-size:10px;font-weight:500;transition:.3s
+    }
+    .primary-btn{padding:16px 28px;background:#171717;color:#fff}
+    .primary-btn:hover,.cta-btn:hover,.form-submit:hover{transform:translateY(-3px)}
+
+    /* GENERAL */
+    section{padding:125px 6%}
+    .section-heading{
+      font:500 clamp(40px,4.6vw,66px)/1.02 "Bricolage Grotesque";
+      letter-spacing:-3px;max-width:930px
+    }
+
+    /* PROBLEM */
+    .intro-section{
+      position:relative;
+      overflow:hidden;
+      isolation:isolate;
+      background:#171717;
+      color:#fff;
+    }
+    .intro-section::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:-2;
+      background:
+        linear-gradient(90deg,rgba(8,8,8,.70) 0%,rgba(8,8,8,.60) 48%,rgba(8,8,8,.50) 100%),
+        url("assets/.jpg") center/cover no-repeat;
+      transform:scale(1.02);
+    }
+    .intro-section::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:-1;
+      background:
+        radial-gradient(circle at 78% 28%,rgba(255,255,255,.10),transparent 24%),
+        linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.25));
+      pointer-events:none;
+    }
+    .intro-content{position:relative;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:90px;align-items:end}
+    .intro-section .section-label{color:#929292;margin-bottom:22px}
+    .intro-copy{max-width:560px;color:#bdbdbd;font-size:15px;line-height:1.75}
+    .intro-copy p+p{margin-top:12px}
+    .intro-btn{margin-top:28px;padding:14px 24px;border:1px solid #666;color:#fff}
+    .intro-btn:hover{background:#fff;color:#171717}
+
+    /* SERVICES — image cards */
+    .services-section{background:#f4f1eb}
+    .services-heading{margin:24px 0 65px}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service-item{
+      position:relative;min-height:390px;background:#e9e6df;border:1px solid #d7d3ca;
+      border-radius:20px;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;
+      opacity:0;transform:translateY(25px);transition:.7s ease
+    }
+    .service-item.visible{opacity:1;transform:translateY(0)}
+    .service-image{height:170px;overflow:hidden}
+    .service-image img{height:100%;object-fit:cover;transition:transform .6s}
+    .service-item:hover .service-image img{transform:scale(1.06)}
+    .service-body{padding:25px 28px 30px}
+    .service-number{font-size:12px;color:#777;margin-bottom:36px}
+    .service-item h3{
+      font:500 27px/1.05 "Bricolage Grotesque";letter-spacing:-1px;margin-bottom:15px
+    }
+    .service-item p{color:#666;font-size:14px;line-height:1.7}
+    .card-arrow{position:absolute;right:24px;top:188px;width:42px;height:42px;border-radius:50%;
+      background:#171717;color:#fff;display:grid;place-items:center;font-size:18px}
+
+    /* AUDIENCE — reference split cards */
+    .audience-section{
+      position:relative;
+      background:#dfdbd1;
+      overflow:hidden;
+    }
+    .audience-section::before{
+      content:"";
+      position:absolute;
+      width:520px;
+      height:520px;
+      right:-220px;
+      top:120px;
+      border-radius:50%;
+      background:
+        linear-gradient(rgba(223,219,209,.72),rgba(223,219,209,.72)),
+        url("https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1000&q=80") center/cover;
+      opacity:.45;
+      filter:saturate(.7);
+    }
+    .audience-section > *{position:relative;z-index:1}
+    .audience-heading{margin:24px 0 62px}
+    .audience-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#b9b5ac;border:1px solid #b9b5ac}
+    .audience-card{background:#dfdbd1;padding:48px;min-height:300px;transition:.3s}
+    .audience-card:hover{background:#e9e5dd}
+    .audience-tag{font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600;margin-bottom:58px}
+    .audience-card h3{font:500 32px/1.05 "Bricolage Grotesque";letter-spacing:-1.4px;margin-bottom:17px}
+    .audience-card p{color:#5d5b56;line-height:1.75;max-width:470px}
+
+    /* PROCESS */
+    .process-section{background:#f4f1eb}
+    .process-heading{margin:24px 0 70px}
+    .process-list{border-top:1px solid #cfcac0}
+    .process-step{
+      display:grid;grid-template-columns:95px 1fr 2fr;align-items:center;gap:35px;
+      padding:30px 0;border-bottom:1px solid #cfcac0;opacity:0;transform:translateY(18px);transition:.65s
+    }
+    .process-step.visible{opacity:1;transform:translateY(0)}
+    .process-number{font-size:13px;color:#777}
+    .process-step h3{font:500 28px "Bricolage Grotesque";letter-spacing:-1px}
+    .process-step p{color:#666;font-size:15px}
+
+    /* VISUAL BREAK */
+    .visual-break{padding:0 ;background:#f4f1eb}
+    .visual-break-inner{height:480px;border-radius:px;overflow:hidden;position:relative}
+    .visual-break img{height:100%;object-fit:cover}
+    .visual-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.7),transparent 70%);
+      display:flex;align-items:center;padding:60px;color:#fff}
+    .visual-overlay h2{font:500 clamp(40px,4.6vw,62px)/.98 "Bricolage Grotesque";letter-spacing:-3px;max-width:700px}
+
+    /* CTA */
+    .cta-section{
+      position:relative;
+      overflow:hidden;
+      isolation:isolate;
+      background:#171717;
+      color:#fff;
+      min-height:570px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+    }
+    .cta-section::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:-2;
+      background:
+        linear-gradient(180deg,rgba(10,10,10,.30),rgba(10,10,10,.30)),
+        url("assets/goat.png") center/cover no-repeat;
+      transform:scale(1.03);
+    }
+    .cta-section::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:-1;
+      background:
+        radial-gradient(circle at 50% 45%,rgba(255,255,255,.09),transparent 35%),
+        linear-gradient(90deg,rgba(0,0,0,.16),rgba(0,0,0,.08));
+      pointer-events:none;
+    }
+    .cta-content{position:relative;z-index:2;max-width:960px}
+    .cta-section .section-label{color:#999;margin-bottom:24px}
+    .cta-section h2{font:500 clamp(46px,6.5vw,84px)/.96 "Bricolage Grotesque";letter-spacing:-4px;margin-bottom:42px}
+    .cta-btn{padding:16px 30px;background:#fff;color:#171717}
+
+    /* FORM */
+    .enquiry-section{background:#dfdbd1;padding:120px 6%}
+    .enquiry-wrapper{max-width:1200px;margin:auto;display:grid;grid-template-columns:.8fr 1.2fr;gap:100px}
+    .enquiry-intro h2{font:500 clamp(38px,4.2vw,58px)/1 "Bricolage Grotesque";letter-spacing:-2.5px;margin:24px 0}
+    .enquiry-intro p{max-width:430px;color:#666;line-height:1.8;font-size:15px}
+    .enquiry-form{border-top:1px solid #aaa69d}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+    .form-group{margin-top:25px}
+    .form-group label{display:block;font-size:12px;font-weight:600;margin-bottom:9px}
+    .form-group input,.form-group select,.form-group textarea{
+      width:100%;border:1px solid #aaa69d;background:transparent;padding:15px 16px;
+      font:14px Inter,sans-serif;outline:none;border-radius:12px
+    }
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:#171717}
+    .form-submit{margin-top:34px;padding:15px 25px;border:0;background:#171717;color:#fff;cursor:pointer}
+
+    footer{padding:35px 6%;background:#171717;color:#888;border-top:1px solid #333;display:flex;justify-content:space-between;font-size:12px}
+    footer strong{color:#fff}
+
+    @media(min-width:901px){
+      .intro-section::before,.cta-section::before{background-attachment:fixed}
+    }
+
+    @media(max-width:900px){
+      .nav-right a:not(.nav-contact){display:none}
+      .intro-content,.enquiry-wrapper{grid-template-columns:1fr;gap:45px}
+      .services-grid{grid-template-columns:repeat(2,1fr)}
+      .process-step{grid-template-columns:60px 1fr}
+      .process-step p{grid-column:2}
+      .visual-break-inner{height:390px}
+    }
+
+    @media(max-width:600px){
+      .navbar{padding:18px 5%}
+      .brand{gap:9px}
+      .brand-logo{width:45px;height:45px}
+      .logo{font-size:24px;letter-spacing:-1.1px}
+      .brand-tagline{margin-top:5px;font-size:6.5px}
+    }
+
+    @media(max-width:600px){
+      .navbar{padding:18px 5%}
+      /* logo sizing is defined above */
+      section{padding:90px 5%}
+      .hero{min-height:auto;padding:145px 5% 90px}
+      .hero h1{font-size:43px;letter-spacing:-2.2px}
+      .hero-copy{font-size:15px}
+      .section-heading{font-size:41px;letter-spacing:-1.8px}
+      .services-grid,.audience-grid{grid-template-columns:1fr}
+      .service-item{min-height:350px}
+      .audience-card{padding:40px 30px}
+      .process-step{grid-template-columns:45px 1fr;gap:15px}
+      .process-step h3{font-size:24px}
+      .visual-break{padding:0 5%}
+      .visual-break-inner{height:340px}
+      .visual-overlay{padding:35px}
+      .cta-section{min-height:500px}
+      .cta-section h2{font-size:51px;letter-spacing:-2.2px}
+      .form-row{grid-template-columns:1fr}
+      footer{flex-direction:column;gap:10px}
+    }
+    /* =========================================
+   MVP PROCESS SECTION
+========================================= */
+
+.mvp-process {
+    position: relative;
+    padding: 140px 5vw;
+    background: #f5f3ee;
+    overflow: hidden;
+}
+
+
+/* -----------------------------------------
+   HEADER
+----------------------------------------- */
+
+.mvp-process-header {
+    max-width: 1500px;
+    margin: 0 auto 70px;
+
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 80px;
+
+    align-items: end;
+}
+
+.section-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 22px;
+
+    font-family: "Martian Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    color: #77736b;
+}
+
+.mvp-process-header h2 {
+    max-width: 850px;
+
+    margin: 0;
+
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: clamp(48px, 5vw, 82px);
+    line-height: 0.95;
+    font-weight: 500;
+    letter-spacing: -0.055em;
+
+    color: #11110f;
+}
+
+.mvp-process-header p {
+    max-width: 430px;
+
+    margin: 0;
+
+    font-family: "Inter", sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+
+    color: #66635d;
+}
+
+
+/* -----------------------------------------
+   CARD GRID
+----------------------------------------- */
+
+.mvp-process-grid {
+    max-width: 1500px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 16px;
+}
+
+
+/* -----------------------------------------
+   CARD
+----------------------------------------- */
+
+.process-card {
+    position: relative;
+
+    min-height: 620px;
+
+    overflow: hidden;
+
+    border: 1px solid #d8d5ce;
+    border-radius: 25px;
+
+    background: #f8f7f3;
+
+    transition:
+        transform 0.45s cubic-bezier(.2,.8,.2,1),
+        box-shadow 0.45s ease;
+}
+
+.process-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 210px;
+    height: 210px;
+
+    right: -90px;
+    top: 185px;
+
+    border: 1px solid rgba(30, 30, 25, 0.08);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.process-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 25px 60px rgba(20, 20, 15, 0.10);
+}
+
+
+/* -----------------------------------------
+   IMAGE
+----------------------------------------- */
+
+.process-image {
+    position: relative;
+
+    height: 210px;
+
+    overflow: hidden;
+}
+
+.process-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.7s cubic-bezier(.2,.8,.2,1);
+}
+
+.process-card:hover .process-image img {
+    transform: scale(1.06);
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.03),
+            rgba(0,0,0,0.48)
+        );
+}
+
+
+/* -----------------------------------------
+   IMAGE LABEL
+----------------------------------------- */
+
+.process-label {
+    position: absolute;
+
+    left: 22px;
+    bottom: 18px;
+
+    display: inline-flex;
+    align-items: center;
+
+    padding: 9px 14px;
+
+    border: 1px solid rgba(255,255,255,0.8);
+
+    border-radius: 50px;
+
+    color: #fff;
+
+    font-family: "Martian Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+
+    background: rgba(20,20,18,0.15);
+
+    backdrop-filter: blur(8px);
+}
+
+
+/* -----------------------------------------
+   CONTENT
+----------------------------------------- */
+
+.process-content {
+    position: relative;
+
+    min-height: 410px;
+
+    padding: 27px 26px 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 2;
+}
+
+
+/* -----------------------------------------
+   NUMBER + ARROW
+----------------------------------------- */
+
+.process-top {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 27px;
+}
+
+.process-number {
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #d5d1c8;
+
+    border-radius: 50%;
+
+    font-family: "Martian Mono", monospace;
+    font-size: 12px;
+
+    color: #22211e;
+
+    background: #f8f7f3;
+}
+
+.process-arrow {
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #d5d1c8;
+
+    border-radius: 50%;
+
+    font-size: 22px;
+    font-weight: 300;
+
+    color: #25231f;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.process-card:hover .process-arrow {
+    background: #151512;
+    color: #fff;
+
+    transform: rotate(45deg);
+}
+
+
+/* -----------------------------------------
+   TITLE
+----------------------------------------- */
+
+.process-content h3 {
+    margin: 0 0 20px;
+
+    font-family: "Bricolage Grotesque", sans-serif;
+
+    font-size: clamp(30px, 2.2vw, 38px);
+
+    line-height: 1;
+
+    font-weight: 500;
+
+    letter-spacing: -0.045em;
+
+    color: #11110f;
+}
+
+
+/* -----------------------------------------
+   DESCRIPTION
+----------------------------------------- */
+
+.process-content p {
+    margin: 0;
+
+    max-width: 290px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 15.5px;
+
+    line-height: 1.65;
+
+    color: #68655f;
+}
+
+
+/* -----------------------------------------
+   TAGS
+----------------------------------------- */
+
+.process-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 16px;
+
+    margin-top: auto;
+    padding-top: 28px;
+}
+
+.process-tags span {
+    padding: 9px 12px;
+
+    border: 1px solid #d8d5cd;
+
+    border-radius: 50px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 11px;
+
+    color: #68655e;
+
+    background: rgba(255,255,255,0.25);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1200px) {
+
+    .mvp-process {
+        padding: 110px 4vw;
+    }
+
+    .mvp-process-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .process-card {
+        min-height: 590px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .mvp-process {
+        padding: 90px 20px;
+    }
+
+    .mvp-process-header {
+        display: block;
+
+        margin-bottom: 45px;
+    }
+
+    .mvp-process-header h2 {
+        font-size: 48px;
+
+        margin-bottom: 30px;
+    }
+
+    .mvp-process-header p {
+        font-size: 16px;
+    }
+
+    .mvp-process-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .process-card {
+        min-height: auto;
+    }
+
+    .process-image {
+        height: 240px;
+    }
+
+    .process-content {
+        min-height: 390px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .mvp-process {
+        padding: 75px 16px;
+    }
+
+    .mvp-process-header h2 {
+        font-size: 42px;
+    }
+
+    .process-image {
+        height: 220px;
+    }
+
+    .process-content {
+        padding: 24px 22px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+  <header class="navbar">
+    <a href="index.html" class="brand" aria-label="Turtix Digital">
+      <img
+        src="logo3.png"
+        alt="Turtix logo mark"
+        class="brand-logo">
+
+      <span class="brand-copy">
+        <span class="logo">Turtix<span class="logo-dot">.</span></span>
+      </span>
+    </a>
+    <nav class="nav-right">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#enquiry" class="nav-contact">Contact Us</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">PROTOTYPING &amp; MVP</div>
+        <h1>Prove the product before you spend months building it.</h1>
+        <div class="hero-copy">
+          <p>Turn an idea into something people can see, experience and test — before committing to a <br> full product build.</p>
+          <p>From clickable prototypes to functional MVPs, Turtix helps you validate what matters and <br> build what you actually need.</p>
+        </div>
+        <a href="#enquiry" class="primary-btn">Discuss My Idea <span>→</span></a>
+      </div>
+    </section>
+
+    <section class="intro-section">
+      <div class="intro-content">
+        <div>
+          <div class="section-label">The problem</div>
+          <h2 class="section-heading">Don't build everything. Build enough to learn.</h2>
+        </div>
+        <div class="intro-copy">
+          <p>Founders often make one of two mistakes:</p>
+          <p>They spend too much building before speaking to users.</p>
+          <p>Or they build something so limited that it doesn't actually prove the idea.</p>
+          <p>We help find the middle ground — the smallest useful product that can test your most important assumptions.</p>
+          <a href="#enquiry" class="intro-btn">Discuss My Idea <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section" id="services">
+      <div class="section-label">What we do</div>
+      <h2 class="section-heading services-heading">From product idea to a useful first version.</h2>
+
+      <div class="services-grid">
+        <article class="service-item">
+          <div class="service-image"><img src="assets/clickable-prototypes.png" alt="Design prototype on a laptop"></div>
+          <div class="service-body"><div class="service-number">01</div><h3>Clickable Prototypes</h3><p>Experience the product before writing production code.</p></div>
+          <div class="card-arrow">↗</div>
+        </article>
+        <article class="service-item">
+          <div class="service-image"><img src="assets/mvp-strategy.png.jpeg" alt="Team planning a product strategy"></div>
+          <div class="service-body"><div class="service-number">02</div><h3>MVP Strategy</h3><p>Define what belongs in V1 — and what doesn't.</p></div>
+          <div class="card-arrow">↗</div>
+        </article>
+        <article class="service-item">
+          <div class="service-image"><img src="assets/pro1.png" alt="Product team testing ideas"></div>
+          <div class="service-body"><div class="service-number">03</div><h3>User Testing Builds</h3><p>Put something real in front of users and learn from their behaviour.</p></div>
+          <div class="card-arrow">↗</div>
+        </article>
+        <article class="service-item">
+          <div class="service-image"><img src="assets/product-definition.png.avif" alt="Product definition workshop"></div>
+          <div class="service-body"><div class="service-number">04</div><h3>Product Definition</h3><p>Turn a broad idea into clear features, workflows and requirements.</p></div>
+          <div class="card-arrow">↗</div>
+        </article>
+        <article class="service-item">
+          <div class="service-image"><img src="assets/technical-planning.jpg.jpeg" alt="Technology and technical planning"></div>
+          <div class="service-body"><div class="service-number">05</div><h3>Technical Planning</h3><p>Define the technology, architecture and development approach.</p></div>
+          <div class="card-arrow">↗</div>
+        </article>
+        <article class="service-item">
+          <div class="service-image"><img src="assets/mvp-development.png.avif" alt="Development team building a product"></div>
+          <div class="service-body"><div class="service-number">06</div><h3>MVP Development</h3><p>Build and launch the first usable version of your product.</p></div>
+          <div class="card-arrow">↗</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="audience-section">
+      <div class="section-label">Who it's for</div>
+      <h2 class="section-heading audience-heading">Built for teams that need to learn before they scale.</h2>
+      <div class="audience-grid">
+        <article class="audience-card"><div class="audience-tag">First-time founders</div><h3>Make the idea tangible.</h3><p>You have the idea but need help turning it into something tangible that people can understand, use and react to.</p></article>
+        <article class="audience-card"><div class="audience-tag">Existing businesses</div><h3>Test what's next.</h3><p>You want to test a new product, feature or digital offering before investing heavily in a full build.</p></article>
+        <article class="audience-card"><div class="audience-tag">Funded startups</div><h3>Move from concept to MVP.</h3><p>You need to move from concept or prototype to a working MVP without losing focus on the core product.</p></article>
+        <article class="audience-card"><div class="audience-tag">Product teams</div><h3>Reduce build risk.</h3><p>You need to test an idea before committing engineering resources and make decisions using real user feedback.</p></article>
+      </div>
+    </section>
+
+    <!-- =========================================
+     FOCUSED MVP PROCESS
+========================================= -->
+
+<section class="mvp-process" id="process">
+
+    <div class="mvp-process-header">
+        <div>
+            <span class="section-eyebrow">THE PROCESS</span>
+
+            <h2>
+                A focused path from assumption
+                to validated product.
+            </h2>
+        </div>
+
+        <p>
+            We don't build everything at once. We move from
+            assumptions to evidence, testing the most important
+            product decisions before investing heavily in development.
+        </p>
+    </div>
+
+
+    <div class="mvp-process-grid">
+
+        <!-- CARD 01 -->
+        <article class="process-card">
+
+            <div class="process-image">
+                <img
+                    src="assets/assumption.png"
+                    alt="Team discussing a product idea"
+                >
+
+                <div class="image-overlay"></div>
+
+                <span class="process-label">
+                    ASSUMPTION
+                </span>
+            </div>
+
+            <div class="process-content">
+
+                <div class="process-top">
+                    <span class="process-number">01</span>
+
+                    <span class="process-arrow">↗</span>
+                </div>
+
+                <h3>Assumption</h3>
+
+                <p>
+                    We identify the problem, target users and
+                    assumptions that need to be true for the
+                    product to succeed.
+                </p>
+
+                <div class="process-tags">
+                    <span>Problem</span>
+                    <span>Audience</span>
+                    <span>Research</span>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- CARD 02 -->
+        <article class="process-card">
+
+            <div class="process-image">
+                <img
+                    src="assets/Define.jpg.jpeg"
+                    alt="Team planning product structure"
+                >
+
+                <div class="image-overlay"></div>
+
+                <span class="process-label">
+                    DEFINE
+                </span>
+            </div>
+
+            <div class="process-content">
+
+                <div class="process-top">
+                    <span class="process-number">02</span>
+
+                    <span class="process-arrow">↗</span>
+                </div>
+
+                <h3>Define</h3>
+
+                <p>
+                    We narrow the product down to the essential
+                    user journey and define what the first
+                    version actually needs to prove.
+                </p>
+
+                <div class="process-tags">
+                    <span>User Flow</span>
+                    <span>MVP Scope</span>
+                    <span>Priorities</span>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- CARD 03 -->
+        <article class="process-card">
+
+            <div class="process-image">
+                <img
+                    src="assets/pro2.png"
+                    alt="Product interface prototype"
+                >
+
+                <div class="image-overlay"></div>
+
+                <span class="process-label">
+                    PROTOTYPE
+                </span>
+            </div>
+
+            <div class="process-content">
+
+                <div class="process-top">
+                    <span class="process-number">03</span>
+
+                    <span class="process-arrow">↗</span>
+                </div>
+
+                <h3>Prototype</h3>
+
+                <p>
+                    We turn the idea into a clickable product
+                    experience so users can interact with it
+                    before expensive development begins.
+                </p>
+
+                <div class="process-tags">
+                    <span>UI</span>
+                    <span> User Experience</span>
+                    <span>Prototype</span>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- CARD 04 -->
+        <article class="process-card">
+
+            <div class="process-image">
+                <img
+                    src="assets/validate.jpeg"
+                    alt="Team testing a product"
+                >
+
+                <div class="image-overlay"></div>
+
+                <span class="process-label">
+                    VALIDATE
+                </span>
+            </div>
+
+            <div class="process-content">
+
+                <div class="process-top">
+                    <span class="process-number">04</span>
+
+                    <span class="process-arrow">↗</span>
+                </div>
+
+                <h3>Validate</h3>
+
+                <p>
+                    We put the prototype in front of real users,
+                    learn where the experience works and identify
+                    what needs to change.
+                </p>
+
+                <div class="process-tags">
+                    <span>User Testing</span>
+                    <span>Feedback</span>
+                    <span>Insights</span>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- CARD 05 -->
+        <article class="process-card">
+
+            <div class="process-image">
+                <img
+                    src="assets/Software-Development-Process.png"
+                    alt="Software development"
+                >
+
+                <div class="image-overlay"></div>
+
+                <span class="process-label">
+                    BUILD
+                </span>
+            </div>
+
+            <div class="process-content">
+
+                <div class="process-top">
+                    <span class="process-number">05</span>
+
+                    <span class="process-arrow">↗</span>
+                </div>
+
+                <h3>Build</h3>
+
+                <p>
+                    Once the product direction is validated,
+                    we build the focused MVP with the confidence
+                    that comes from tested decisions.
+                </p>
+
+                <div class="process-tags">
+                    <span>Development</span>
+                    <span>Testing</span>
+                    <span>Launch</span>
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+    
+    <section class="cta-section">
+      <div class="cta-content">
+        <div class="section-label">The Turtix Promise</div>
+        <h2>Your first version doesn't need to be perfect. It needs to teach you something.</h2>
+        <a href="#enquiry" class="cta-btn">Let's Define Your MVP <span>→</span></a>
+      </div>
+    </section>
+
+    <section class="enquiry-section" id="enquiry">
+      <div class="enquiry-wrapper">
+        <div class="enquiry-intro">
+          <div class="section-label">Start a project</div>
+          <h2>Tell us what you're building.</h2>
+          <p>Whether you're validating an early idea, planning a startup MVP or turning a prototype into a working product, tell us a little about it and we'll get back to you.</p>
+        </div>
+
+        <form class="enquiry-form" action="https://formsubmit.co/info@turtixdigital.com" method="POST">
+          <input type="hidden" name="_subject" value="New Prototyping & MVP Enquiry">
+          <input type="hidden" name="_next" value="https://turtixdigital.com/">
+
+          <div class="form-row">
+            <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" placeholder="Your name" required></div>
+            <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="you@example.com" required></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label for="phone">Phone</label><input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX"></div>
+            <div class="form-group"><label for="company">Company</label><input type="text" id="company" name="company" placeholder="Company name"></div>
+          </div>
+          <div class="form-group">
+            <label for="service">What do you need?</label>
+            <select id="service" name="service" required>
+              <option value="">Select a service</option>
+              <option value="clickable-prototype">Clickable Prototype</option>
+              <option value="mvp-strategy">MVP Strategy</option>
+              <option value="user-testing-build">User Testing Build</option>
+              <option value="product-definition">Product Definition</option>
+              <option value="technical-planning">Technical Planning</option>
+              <option value="mvp-development">MVP Development</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group"><label for="message">Tell us about your idea</label><textarea id="message" name="message" rows="6" placeholder="Tell us about your product idea, users, prototype or MVP..." required></textarea></div>
+          <button type="submit" class="form-submit">Discuss My Idea <span>→</span></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© 2026 <strong>Turtix Digital Solutions Pvt.Ltd.</strong></div>
+    <div>Innovate | Build | Scale.</div>
+  </footer>
+
+  <script>
+    const revealItems = document.querySelectorAll('.service-item,.process-step');
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },{threshold:.12});
+
+    revealItems.forEach((item,index)=>{
+      item.style.transitionDelay = `${(index % 6) * .08}s`;
+      observer.observe(item);
+    });
+  </script>
+</body>
+</html>

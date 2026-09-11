@@ -1,0 +1,214 @@
+
+<!DOCTYPE html> 
+<html lang="en"> 
+ 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+ 
+    <title>Thank You | Turtix Digital Solutions</title> 
+ 
+    <link rel="icon" type="image/png" href="logo3.png"> 
+ 
+    <style> 
+        :root { 
+            --ink: #070b18; 
+            --paper: #f4f5f7; 
+            --muted: #a8b0c0; 
+            --brand: #2e5ce0; 
+            --brand-light: #6f8fff; 
+            --line: rgba(255,255,255,0.12); 
+        } 
+        .enquiry-received {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    margin-bottom: 15px;
+
+    color: #2e8cff !important;  /* text color */
+
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.enquiry-received::before,
+.enquiry-received::after {
+    content: "";
+    width: 45px;
+    height: 1px;
+    background: #2e8cff;  /* line color */
+}
+        
+.enquiry-received {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    margin-bottom: 15px;
+
+    color: #2e8cff;
+
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.enquiry-received::before,
+.enquiry-received::after {
+    content: "";
+    width: 45px;
+    height: 1px;
+    background: #2e8cff;
+}
+
+ 
+        * { 
+            box-sizing: border-box; 
+        } 
+ 
+        body { 
+            margin: 0; 
+            min-height: 100vh; 
+ 
+            background: var(--ink); 
+            color: var(--paper); 
+ 
+            font-family: Arial, sans-serif; 
+ 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+ 
+            text-align: center; 
+        } 
+ 
+        .thank-you { 
+            width: min(700px, 90%); 
+            padding: 60px 30px; 
+        } 
+ 
+       .logo { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 10px; 
+    margin-bottom: 45px; 
+    text-align: left; 
+} 
+ 
+.logo img { 
+    width: 45px; 
+    height: auto; 
+} 
+ 
+.brand-text { 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+} 
+ 
+.brand-name { 
+    font-size: 26px; 
+    line-height: 1; 
+    font-weight: 700; 
+    color: var(--paper); 
+} 
+ 
+.brand-name .dot { 
+    color: var(--amber); 
+} 
+ 
+.tagline { 
+    margin-top: 5px; 
+    font-size: 10px; 
+    line-height: 1; 
+    letter-spacing: 0.08em; 
+    color: var(--muted); 
+    font-weight: 500; 
+} 
+
+        /* Added only this message */
+        .enquiry-received {
+            margin-bottom: 15px;
+            color: var(--paper);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+ 
+        h1 { 
+            font-size: clamp(26px, 5vw, 26px); 
+            line-height: 1.1; 
+            margin: 0 0 22px; 
+            font-weight: 700; 
+              
+             
+        } 
+ 
+        p { 
+            max-width: 570px; 
+            margin: 0 auto 35px; 
+ 
+            color: var(--muted); 
+ 
+            font-size: 15px; 
+            line-height: 1.7; 
+             
+        } 
+.back-home { 
+    display: inline-block; 
+ 
+    padding: 8px 16px; 
+ 
+    border: 1px solid var(--line); 
+    border-radius: 5px; 
+ 
+    color: var(--paper); 
+    text-decoration: none; 
+ 
+    font-size: 12px; 
+    font-weight: 600; 
+ 
+    transition: 0.25s ease; 
+} 
+        .back-home:hover { 
+            background: var(--brand); 
+            border-color: var(--brand); 
+            color: white; 
+        } 
+    </style> 
+</head> 
+ 
+<body> 
+ 
+    <main class="thank-you"> 
+ 
+        <div class="enquiry-received">
+            Enquiry Received
+        </div>
+
+        <h1> 
+            Thank you for getting in touch. 
+        </h1> 
+ 
+        <p> 
+            Your message is with us. We’ll review the details and someone 
+            from our team will be in touch soon. 
+        </p> 
+ 
+        <a href="index.html" class="back-home"> 
+            Back to Home 
+        </a> 
+ 
+    </main> 
+ 
+</body> 
+</html>
+

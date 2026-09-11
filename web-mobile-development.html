@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web & Mobile Development | Turtix Digital</title>
+  <meta name="description" content="Turtix builds web applications, SaaS platforms, mobile apps, APIs and scalable digital products.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet">
+ <link rel="icon" type="image/png" sizes="32x32" href="logo3.png">
+<link rel="icon" type="image/png" sizes="16x16" href="logo3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="logo3.png">
+  <style>
+    :root{
+      --cream:#f5f3ee;
+      --cream-2:#e8e4db;
+      --card:#eeece6;
+      --ink:#171717;
+      --muted:#67645e;
+      --line:#d3cfc5;
+      --blue:#1d63bd;
+      --white:#fff;
+      --dark:#171717;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:"Inter",sans-serif;
+      background:var(--cream);
+      color:var(--ink);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+
+    /* NAV */
+    .navbar{
+      position:absolute;
+      top:0;left:0;
+      width:100%;
+      padding:25px 6%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      z-index:50;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      width:max-content;
+    }
+    .brand-logo{
+      width:58px;
+      height:58px;
+      object-fit:contain;
+      flex:0 0 auto;
+    }
+    .brand-copy{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      justify-content:center;
+    }
+    .logo{
+      font-family:"Bricolage Grotesque",sans-serif;
+      font-size:40px;
+      line-height:.9;
+      font-weight:900;
+      letter-spacing:-1.6px;
+      white-space:nowrap;
+    }
+    .logo-dot{margin-left:1px}
+    .brand-tagline{
+      margin-top:6px;
+      font-family:"Martian Mono",monospace;
+      font-size:8px;
+      line-height:1;
+      font-weight:500;
+      letter-spacing:.01em;
+      white-space:nowrap;
+    }
+
+    .nav-right{
+      display:flex;
+      align-items:center;
+      color:white;
+      gap:34px;
+    }
+    .nav-right a{
+      font-size:14px;
+      font-weight:500;
+      transition:opacity .25s ease,transform .25s ease;
+    }
+    .nav-right a:hover{opacity:.55}
+    .nav-contact{
+      border:1px solid white;
+      border-radius:999px;
+      padding:10px 19px;
+    }
+
+    /* COMMON */
+    section{padding:130px 6%}
+    .section-label{
+      font-family:"Martian Mono",monospace;
+      font-size:10px;
+      letter-spacing:1.7px;
+      text-transform:uppercase;
+      font-weight:500;
+      margin-bottom:24px;
+    }
+    .section-heading{
+      font-family:"Bricolage Grotesque",sans-serif;
+      font-size:clamp(42px,5.2vw,72px);
+      line-height:1.02;
+      letter-spacing:-3px;
+      font-weight:500;
+      max-width:900px;
+    }
+
+    /* HERO */
+    .hero{
+      min-height:100vh;
+      padding:155px 6% 85px;
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:60px;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 82% 45%,rgba(29,99,189,.08),transparent 32%),
+        var(--cream);
+    }
+    .hero-content{position:relative;z-index:2;max-width:760px}
+    .eyebrow{
+      font-family:"Martian Mono",monospace;
+      font-size:10px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      margin-bottom:28px;
+    }
+    .hero h1{
+      font-family:"Bricolage Grotesque",sans-serif;
+      font-size:clamp(52px,6.5vw,92px);
+      line-height:.96;
+      letter-spacing:-4px;
+      font-weight:500;
+      margin-bottom:34px;
+    }
+    .hero-copy{
+      max-width:630px;
+      color:#57544e;
+      font-size:17px;
+      line-height:1.75;
+      margin-bottom:34px;
+    }
+    .primary-btn,.cta-btn,.intro-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:12px;
+      border-radius:999px;
+      transition:transform .3s ease,background .3s ease,color .3s ease;
+      font-size:14px;
+      font-weight:500;
+    }
+ .primary-btn{
+  padding:15px 25px;
+  background:transparent !important;
+  background-color:transparent !important;
+  color:#fff !important;
+  border:1px solid rgba(255,255,255,.75) !important;
+  box-shadow:none !important;
+}
+.primary-btn:hover{
+  transform:translateY(-3px);
+  background:transparent !important;
+  background-color:transparent !important;
+  color:#fff !important;
+  border-color:#fff !important;
+}
+    .primary-btn:hover,.form-submit:hover{transform:translateY(-3px);background:#333}
+    .hero-visual{
+      position:relative;
+      min-height:530px;
+      border-radius:26px;
+      overflow:hidden;
+      background:#d9d6ce;
+      box-shadow:0 25px 70px rgba(0,0,0,.10);
+    }
+    .hero-visual img{
+      width:100%;
+      height:100%;
+      min-height:530px;
+      object-fit:cover;
+      filter:saturate(.78);
+    }
+    .hero-visual::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg,rgba(23,23,23,.03),rgba(23,23,23,.28));
+    }
+    .hero-badge{
+      position:absolute;
+      z-index:2;
+      left:24px;
+      bottom:24px;
+      padding:12px 16px;
+      border:1px solid rgba(255,255,255,.45);
+      background:rgba(23,23,23,.72);
+      backdrop-filter:blur(10px);
+      color:#fff;
+      border-radius:999px;
+      font-family:"Martian Mono",monospace;
+      font-size:9px;
+    }
+
+    /* PROBLEM */
+    .intro-section{
+      background:var(--dark);
+      color:#fff;
+    }
+    .intro-content{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:80px;
+      align-items:end;
+    }
+    .intro-section .section-label{color:#96938d}
+    .intro-copy{
+      max-width:520px;
+      color:#bdbbb6;
+      font-size:16px;
+      line-height:1.85;
+    }
+   .intro-btn{
+    margin-top:28px;
+    padding:13px 20px;
+    border:1px solid white !important;
+    color:#fff !important;
+    background:transparent !important;
+    background-color:transparent !important;
+    box-shadow:none !important;
+    -webkit-appearance:none !important;
+    appearance:none !important;
+}
+
+.intro-btn:hover,
+.intro-btn:link,
+.intro-btn:visited,
+.intro-btn:active,
+.intro-btn:focus{
+    background:transparent !important;
+    background-color:transparent !important;
+    border:1px solid white !important;
+    color:#fff !important;
+    box-shadow:none !important;
+}
+.intro-btn:hover{
+  background:transparent !important;
+  background-color:transparent !important;
+  color:#fff !important;
+  transform:translateY(-3px);
+  border: solid white ! important;
+}
+    /* SERVICES */
+    .services-section{background:var(--cream)}
+    .services-heading{margin-bottom:62px}
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .service-item{
+      position:relative;
+      min-height:420px;
+      overflow:hidden;
+      isolation:isolate;
+      border:1px solid #d8d4cb;
+      border-radius:20px;
+      background:var(--card);
+      transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s ease,border-color .35s ease;
+    }
+    .service-image{
+      height:185px;
+      overflow:hidden;
+      position:relative;
+    }
+    .service-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      filter:saturate(.72);
+      transition:transform .7s cubic-bezier(.16,1,.3,1),filter .5s ease;
+    }
+    .service-image::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,transparent,rgba(23,23,23,.22));
+    }
+    .service-body{padding:25px 27px 28px}
+    .service-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:26px;
+    }
+    .service-number{
+      width:38px;height:38px;
+      display:grid;place-items:center;
+      border:1px solid #c5c1b8;
+      border-radius:50%;
+      font-family:"Martian Mono",monospace;
+      font-size:9px;
+      color:#555;
+      transition:.35s ease;
+    }
+    .service-arrow{
+      width:34px;height:34px;
+      display:grid;place-items:center;
+      border:1px solid #c5c1b8;
+      border-radius:50%;
+      font-size:16px;
+      transition:.35s ease;
+    }
+    .service-item h3{
+      font-family:"Bricolage Grotesque",sans-serif;
+      font-size:29px;
+      line-height:1.04;
+      letter-spacing:-1.2px;
+      font-weight:500;
+      margin-bottom:13px;
+    }
+    .service-item p{
+      color:#66625c;
+      font-size:14px;
+      line-height:1.7;
+      max-width:330px;
+    }
+    .service-item:hover{
+      transform:translateY(-9px);
+      box-shadow:0 24px 55px rgba(0,0,0,.10);
+      border-color:#b9b5ac;
+    }
+    .service-item:hover .service-image img{
+      transform:scale(1.07);
+      filter:saturate(.95);
+    }
+    .service-item:hover .service-number{
+      background:var(--ink);
+      color:#fff;
+      border-color:var(--ink);
+      transform:rotate(7deg);
+    }
+    .service-item:hover .service-arrow{
+      background:#fff;
+      transform:translate(2px,-2px);
+    }
+
+    /* NEW / EXISTING */
+    .new-existing{background:var(--cream-2)}
+    .new-existing-heading{margin-bottom:58px}
+    .split-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+    .split-card{
+      min-height:440px;
+      position:relative;
+      overflow:hidden;
+      border-radius:20px;
+      color:#fff;
+      padding:34px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      background:#333;
+    }
+    .split-card img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      filter:saturate(.65);
+      transition:transform .7s ease;
+    }
+    .split-card::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.78));
+    }
+    .split-card:hover img{transform:scale(1.06)}
+    .split-content{position:relative;z-index:2}
+    .split-tag{
+      font-family:"Martian Mono",monospace;
+      font-size:9px;
+      letter-spacing:1.5px;
+      margin-bottom:18px;
+    }
+    .split-card h3{
+      font-family:"Bricolage Grotesque",sans-serif;
+      font-size:42px;
+      line-height:1;
+      letter-spacing:-1.7px;
+      font-weight:500;
+      margin-bottom:16px;
+    }
+    .split-card p{max-width:450px;color:#ddd;line-height:1.7;font-size:14px}
+
+    /* PROCESS */
+    .process-section{background:var(--cream)}
+    .process-heading{margin-bottom:64px}
+    .process-grid{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:14px;
+    }
+    .process-card{
+      min-height:370px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      overflow:hidden;
+      background:#ece9e1;
+      transition:transform .45s ease,box-shadow .45s ease;
+    }
+    .process-card:hover{
+      transform:translateY(-7px);
+      box-shadow:0 20px 45px rgba(0,0,0,.08);
+    }
+    .process-image{height:145px;overflow:hidden}
+    .process-image img{
+      width:100%;height:100%;object-fit:cover;
+      filter:saturate(.7);
+      transition:transform .6s ease;
+    }
+    .process-card:hover .process-image img{transform:scale(1.06)}
+    .process-body{padding:22px}
+    .process-kicker{
+      font-family:"Martian Mono",monospace;
+      font-size:8px;
+      letter-spacing:1.5px;
+      color:#666;
+      margin-bottom:15px;
+    }
+    .process-number{
+      font-family:"Martian Mono",monospace;
+      font-size:10px;
+      color:#777;
+      margin-bottom:10px;
+    }
+    .process-card h3{
+      font-family:"Bricolage Grotesque",sans-serif;
+      font-size:28px;
+      line-height:1;
+      letter-spacing:-1px;
+      font-weight:500;
+      margin-bottom:12px;
+    }
+    .process-card p{font-size:13px;color:#666;line-height:1.65}
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin-top:17px;
+    }
+    .tags span{
+      border:1px solid #c9c5bb;
+      border-radius:999px;
+      padding:5px 8px;
+      font-family:"Martian Mono",monospace;
+      font-size:7px;
+      color:#68655f;
+    }
+
+    /* CTA */
+    .cta-section{
+      position:relative;
+      min-height:610px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:#fff;
+      overflow:hidden;
+      background:#171717;
+    }
+    .cta-bg{
+      position:absolute;
+      inset:0;
+      width:100%;height:100%;
+      object-fit:cover;
+      opacity:.28;
+      filter:grayscale(1);
+    }
+    .cta-section::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,.45);
+    }
+    .cta-content{position:relative;z-index:2;max-width:950px}
+    .cta-section h2{
+      font-family:"Bricolage Grotesque",sans-serif;
+      font-size:clamp(50px,7vw,92px);
+      line-height:.94;
+      letter-spacing:-4px;
+      font-weight:500;
+      margin-bottom:42px;
+    }
+    .cta-btn{
+      padding:16px 28px;
+      background:#fff;
+      color:var(--ink);
+    }
+    .cta-btn:hover{transform:translateY(-3px)}
+
+    /* FORM */
+    .enquiry-section{
+      background:#e6e2d9;
+      padding:120px 6%;
+    }
+    .enquiry-wrapper{
+      max-width:1200px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:90px;
+    }
+    .enquiry-intro h2{
+      font-family:"Bricolage Grotesque",sans-serif;
+      font-size:clamp(42px,4.5vw,64px);
+      line-height:1;
+      letter-spacing:-2.5px;
+      font-weight:500;
+      margin-bottom:24px;
+    }
+    .enquiry-intro p{max-width:430px;color:#666;line-height:1.8;font-size:15px}
+    .enquiry-form{border-top:1px solid #aaa69d}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+    .form-group{margin-top:25px}
+    .form-group label{
+      display:block;
+      font-size:11px;
+      font-weight:600;
+      margin-bottom:9px;
+      letter-spacing:.3px;
+    }
+    .form-group input,.form-group select,.form-group textarea{
+      width:100%;
+      border:1px solid #aaa69d;
+      background:transparent;
+      padding:15px 16px;
+      font-family:"Inter",sans-serif;
+      font-size:14px;
+      outline:none;
+      border-radius:10px;
+    }
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--ink)}
+    .form-group textarea{resize:vertical}
+    .form-submit{
+      margin-top:35px;
+      padding:15px 25px;
+      border:0;
+      background:var(--ink);
+      color:#fff;
+      border-radius:999px;
+      font-family:"Inter",sans-serif;
+      font-size:14px;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      gap:18px;
+      transition:transform .3s ease,background .3s ease;
+    }
+    .form-submit span{font-size:18px}
+
+    /* FOOTER */
+    footer{
+      padding:35px 6%;
+      background:var(--dark);
+      color:#888;
+      border-top:1px solid #333;
+      display:flex;
+      justify-content:space-between;
+      font-size:12px;
+    }
+    footer strong{color:#fff}
+
+    /* REVEAL */
+    .reveal{
+      opacity:0;
+      transform:translateY(35px);
+      transition:opacity .8s ease,transform .8s cubic-bezier(.16,1,.3,1);
+    }
+    .reveal.visible{opacity:1;transform:translateY(0)}
+
+    @media(max-width:1100px){
+      .hero{grid-template-columns:1fr;gap:45px}
+      .hero-visual{max-width:720px;min-height:420px}
+      .hero-visual img{min-height:420px}
+      .services-grid{grid-template-columns:repeat(2,1fr)}
+      .process-grid{grid-template-columns:repeat(3,1fr)}
+    }
+
+    @media(max-width:800px){
+      .navbar{padding:20px 5%}
+      .nav-right a:not(.nav-contact){display:none}
+      section{padding:95px 5%}
+      .hero{padding:135px 5% 75px}
+      .hero h1{letter-spacing:-2.5px}
+      .intro-content,.enquiry-wrapper{grid-template-columns:1fr;gap:45px}
+      .split-grid{grid-template-columns:1fr}
+      .process-grid{grid-template-columns:repeat(2,1fr)}
+    }
+
+    @media(max-width:600px){
+      .brand{gap:9px}
+      .brand-logo{width:45px;height:45px}
+      .logo{font-size:24px;letter-spacing:-1.1px}
+      .brand-tagline{font-size:6.5px;margin-top:5px}
+      .nav-contact{padding:8px 13px;font-size:12px!important}
+      .hero h1{font-size:50px;letter-spacing:-2.5px}
+      .hero-copy{font-size:16px}
+      .hero-visual,.hero-visual img{min-height:330px}
+      .section-heading{font-size:43px;letter-spacing:-2px}
+      .services-grid,.process-grid{grid-template-columns:1fr}
+      .service-item{min-height:390px}
+      .split-card{min-height:380px}
+      .split-card h3{font-size:38px}
+      .form-row{grid-template-columns:1fr}
+      .cta-section{min-height:500px}
+      .cta-section h2{font-size:52px;letter-spacing:-2.5px}
+      footer{flex-direction:column;gap:10px}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
+    }
+
+
+    /* =========================================================
+       FINAL VISUAL CHANGES — KEEP ALL ORIGINAL CODE/CONTENT
+       ========================================================= */
+
+    /* HERO: use the image as a full-section background instead
+       of a separate image panel on the right. */
+    .hero{
+      display:flex !important;
+      align-items:center !important;
+      min-height:100vh !important;
+      padding:155px 6% 85px !important;
+      position:relative !important;
+      overflow:hidden !important;
+      grid-template-columns:none !important;
+      gap:0 !important;
+      background:
+        linear-gradient(90deg,
+          rgba(245,243,238,.96) 0%,
+          rgba(245,243,238,.91) 34%,
+          rgba(245,243,238,.68) 58%,
+          rgba(245,243,238,.30) 82%,
+          rgba(245,243,238,.16) 100%),
+        url("https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=2400&q=88") center center / cover no-repeat !important;
+      isolation:isolate;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(0,0,0,.04));
+      z-index:0;
+      pointer-events:none;
+    }
+
+    .hero-content{
+      position:relative !important;
+      z-index:3 !important;
+      width:100% !important;
+      max-width:900px !important;
+    }
+
+    /* Keep the original hero visual code in the file, but do not
+       render it as a right-side panel because the image is now the
+       hero's full background. */
+    .hero-visual{
+      display:none !important;
+    }
+
+    /* PROBLEM: replace the flat black background with a full-width
+       photographic background while preserving all original content. */
+    .intro-section{
+      position:relative !important;
+      overflow:hidden !important;
+      isolation:isolate !important;
+      background:
+        linear-gradient(90deg,
+          rgba(10,10,10,.94) 0%,
+          rgba(10,10,10,.87) 38%,
+          rgba(10,10,10,.70) 66%,
+          rgba(10,10,10,.48) 100%),
+        url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=2400&q=88") center center / cover no-repeat !important;
+      color:#fff !important;
+    }
+
+    .intro-section::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.16));
+      z-index:0;
+      pointer-events:none;
+    }
+
+    .intro-content{
+      position:relative !important;
+      z-index:2 !important;
+    }
+
+    @media (max-width:900px){
+      .hero{
+        min-height:100svh !important;
+        padding:145px 5% 75px !important;
+        background:
+          linear-gradient(180deg,
+            rgba(245,243,238,.96) 0%,
+            rgba(245,243,238,.90) 48%,
+            rgba(245,243,238,.70) 100%),
+          url("https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1800&q=88") center center / cover no-repeat !important;
+      }
+      .hero-content{max-width:760px !important}
+      .intro-section{
+        background:
+          linear-gradient(180deg,rgba(10,10,10,.90),rgba(10,10,10,.72)),
+          url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1800&q=88") center center / cover no-repeat !important;
+      }
+    }
+    /* HERO VIDEO BACKGROUND */
+.hero {
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+}
+
+.hero-video {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  z-index: -3 !important;
+  pointer-events: none !important;
+}
+
+/* DARK OVERLAY */
+.hero-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background: rgba(0, 0, 0, 0.45) !important;
+  z-index: -2 !important;
+  pointer-events: none !important;
+}
+
+/* WHITE HERO TEXT */
+.hero-content {
+  position: relative !important;
+  z-index: 2 !important;
+  color: #ffffff !important;
+}
+
+.hero-content .eyebrow,
+.hero-content h1,
+.hero-content .hero-copy,
+.hero-content .hero-copy p {
+  color: #ffffff !important;
+}
+.intro-btn,
+.intro-btn:link,
+.intro-btn:visited,
+.intro-btn:hover,
+.intro-btn:active,
+.intro-btn:focus {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+.intro-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    margin-top: 28px;
+    padding: 18px 28px;
+
+    background: transparent !important;
+    background-color: transparent !important;
+
+    color: #ffffff !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.55) !important;
+    border-radius: 999px !important;
+
+    box-shadow: none !important;
+
+    text-decoration: none !important;
+
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.intro-btn span {
+    display: inline-block;
+    color: #ffffff !important;
+    font-size: 20px;
+    line-height: 1;
+    transition: transform 0.25s ease;
+}
+
+.intro-btn:hover {
+    background: rgba(255, 255, 255, 0.06) !important;
+    background-color: rgba(255, 255, 255, 0.06) !important;
+
+    color: #ffffff !important;
+
+    border-color: rgba(255, 255, 255, 0.85) !important;
+
+    box-shadow: none !important;
+
+    transform: translateY(-2px);
+}
+
+.intro-btn:hover span {
+    transform: translateX(4px);
+}
+
+.intro-btn:visited,
+.intro-btn:active,
+.intro-btn:focus {
+    color: #ffffff !important;
+    background: transparent !important;
+    background-color: transparent !important;
+}
+.intro-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    margin-top: 28px;
+    padding: 18px 28px;
+
+    background: transparent !important;
+    color: #fff !important;
+
+    border: 1px solid #ffffff !important;
+    border-radius: 999px !important;
+
+    box-shadow: none !important;
+    text-decoration: none !important;
+}
+
+.intro-btn span {
+    color: #fff !important;
+}
+
+.intro-btn:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #fff !important;
+    border: 1px solid #ffffff !important;
+    transform: translateY(-2px);
+}
+.intro-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    margin-top: 28px;
+    padding: 18px 28px;
+
+    background: transparent !important;
+    background-color: transparent !important;
+
+    color: #ffffff !important;
+
+    /* BORDER ALWAYS VISIBLE */
+    border: 1px solid rgba(255, 255, 255, 0.65) !important;
+
+    border-radius: 999px !important;
+
+    box-shadow: none !important;
+    text-decoration: none !important;
+
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.intro-btn span {
+    color: #ffffff !important;
+}
+
+/* Hover only changes the background slightly */
+.intro-btn:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    background-color: rgba(255, 255, 255, 0.08) !important;
+
+    color: #ffffff !important;
+
+    /* KEEP BORDER VISIBLE */
+    border: 1px solid rgba(255, 255, 255, 0.65) !important;
+
+    transform: translateY(-2px);
+}
+
+    /* =========================================================
+       SMALLER TYPOGRAPHY — KEEP ALL ORIGINAL CODE/CONTENT
+       Applied as a final override so the existing design stays intact.
+       ========================================================= */
+
+    body{
+      font-size:14px !important;
+    }
+
+    .logo{
+      font-size:40px !important;
+      letter-spacing:-1.4px !important;
+    }
+
+    .brand-tagline{
+      font-size:7px !important;
+    }
+
+    .nav-right{
+      gap:28px !important;
+    }
+
+    .nav-right a{
+      font-size:12px !important;
+    }
+
+    .nav-contact{
+      padding:8px 16px !important;
+      font-size:12px !important;
+    }
+
+    .section-label{
+      font-size:9px !important;
+      letter-spacing:1.5px !important;
+    }
+
+    .section-heading{
+      font-size:clamp(37px,4.6vw,64px) !important;
+      letter-spacing:-2.5px !important;
+    }
+
+    .hero h1{
+      font-size:clamp(44px,5.6vw,78px) !important;
+      line-height:.98 !important;
+      letter-spacing:-3.2px !important;
+    }
+
+    .hero-copy{
+      font-size:15px !important;
+      line-height:1.7 !important;
+    }
+
+    .primary-btn,
+    .cta-btn,
+    .intro-btn{
+      font-size:12px !important;
+    }
+
+    .hero-badge{
+      font-size:8px !important;
+      padding:10px 14px !important;
+    }
+
+    .intro-copy{
+      font-size:14px !important;
+      line-height:1.75 !important;
+    }
+
+    .intro-btn{
+      padding:11px 18px !important;
+    }
+
+    .intro-btn span{
+      font-size:17px !important;
+    }
+
+    .service-number{
+      width:35px !important;
+      height:35px !important;
+      font-size:8px !important;
+    }
+
+    .service-arrow{
+      width:31px !important;
+      height:31px !important;
+      font-size:14px !important;
+    }
+
+    .service-item h3{
+      font-size:25px !important;
+      letter-spacing:-1px !important;
+    }
+
+    .service-item p{
+      font-size:12px !important;
+      line-height:1.65 !important;
+    }
+
+    .split-tag{
+      font-size:8px !important;
+      letter-spacing:1.3px !important;
+    }
+
+    .split-card h3{
+      font-size:36px !important;
+      letter-spacing:-1.5px !important;
+    }
+
+    .split-card p{
+      font-size:12px !important;
+      line-height:1.65 !important;
+    }
+
+    .process-kicker{
+      font-size:7px !important;
+      letter-spacing:1.3px !important;
+    }
+
+    .process-number{
+      font-size:9px !important;
+    }
+
+    .process-card h3{
+      font-size:24px !important;
+      letter-spacing:-.8px !important;
+    }
+
+    .process-card p{
+      font-size:11px !important;
+      line-height:1.6 !important;
+    }
+
+    .tags span{
+      font-size:6.5px !important;
+      padding:4px 7px !important;
+    }
+
+    .cta-section h2{
+      font-size:clamp(42px,6.2vw,78px) !important;
+      letter-spacing:-3.2px !important;
+    }
+
+    .cta-btn{
+      padding:13px 24px !important;
+    }
+
+    .enquiry-intro h2{
+      font-size:clamp(36px,4.2vw,56px) !important;
+      letter-spacing:-2.2px !important;
+    }
+
+    .enquiry-intro p{
+      font-size:13px !important;
+      line-height:1.7 !important;
+    }
+
+    .form-group label{
+      font-size:10px !important;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea{
+      font-size:12px !important;
+      padding:12px 13px !important;
+    }
+
+    .form-submit{
+      font-size:12px !important;
+      padding:13px 22px !important;
+    }
+
+    .form-submit span{
+      font-size:16px !important;
+    }
+
+    footer{
+      font-size:10px !important;
+    }
+
+    @media(max-width:800px){
+      .logo{
+        font-size:24px !important;
+      }
+
+      .brand-tagline{
+        font-size:6px !important;
+      }
+
+      .hero h1{
+        font-size:44px !important;
+        letter-spacing:-2.3px !important;
+      }
+
+      .hero-copy{
+        font-size:13px !important;
+      }
+
+      .section-heading{
+        font-size:37px !important;
+        letter-spacing:-2px !important;
+      }
+
+      .intro-copy{
+        font-size:13px !important;
+      }
+
+      .split-card h3{
+        font-size:33px !important;
+      }
+
+      .cta-section h2{
+        font-size:44px !important;
+        letter-spacing:-2.3px !important;
+      }
+
+      .enquiry-intro h2{
+        font-size:34px !important;
+      }
+    }
+
+    @media(max-width:600px){
+      .logo{
+        font-size:22px !important;
+        letter-spacing:-1px !important;
+      }
+
+      .brand-tagline{
+        font-size:5.8px !important;
+      }
+
+      .nav-contact{
+        padding:7px 11px !important;
+        font-size:11px !important;
+      }
+
+      .hero h1{
+        font-size:40px !important;
+        letter-spacing:-2px !important;
+      }
+
+      .hero-copy{
+        font-size:12.5px !important;
+      }
+
+      .primary-btn,
+      .cta-btn,
+      .intro-btn{
+        font-size:11px !important;
+      }
+
+      .section-heading{
+        font-size:34px !important;
+      }
+
+      .service-item h3{
+        font-size:22px !important;
+      }
+
+      .service-item p{
+        font-size:11px !important;
+      }
+
+      .split-card h3{
+        font-size:30px !important;
+      }
+
+      .split-card p{
+        font-size:11px !important;
+      }
+
+      .process-card h3{
+        font-size:22px !important;
+      }
+
+      .process-card p{
+        font-size:10.5px !important;
+      }
+
+      .cta-section h2{
+        font-size:39px !important;
+      }
+
+      .enquiry-intro h2{
+        font-size:31px !important;
+      }
+
+      .enquiry-intro p{
+        font-size:11.5px !important;
+      }
+
+      footer{
+        font-size:9px !important;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <a href="#" class="brand" aria-label="Turtix Digital">
+    <img src="./logo3.png" alt="Turtix logo mark" class="brand-logo">
+    <span class="brand-copy">
+      <span class="logo">Turtix<span class="logo-dot">.</span></span>
+    </span>
+  </a>
+
+  <nav class="nav-right" aria-label="Main navigation">
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#enquiry" class="nav-contact">Contact Us</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+
+  <!-- Background Video -->
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="webp.mp4" type="video/mp4">
+  </video>
+
+  <!-- Dark overlay -->
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content reveal">
+    <div class="eyebrow">Web &amp; Mobile Development</div>
+
+    <h1>Your product, built right from the beginning.</h1>
+
+    <div class="hero-copy">
+      <p>
+        From SaaS platforms and web applications to cross-platform mobile apps
+        and scalable APIs, Turtix builds technology around the product and
+        business — not just the specification.
+      </p>
+    </div>
+
+    <a href="#enquiry" class="primary-btn">
+      Start a Development Project <span>→</span>
+    </a>
+  </div>
+
+  <div class="hero-visual reveal">
+    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=85" alt="Team planning a digital product">
+    <div class="hero-badge">Plan → Build → Test → Launch</div>
+  </div>
+
+</section>
+  <!-- PROBLEM -->
+  <section class="intro-section">
+    <div class="intro-content">
+      <div class="reveal">
+        <div class="section-label">The problem</div>
+        <h2 class="section-heading">You don't need more code. You need the right product built well.</h2>
+      </div>
+      <div class="intro-copy reveal">
+        <p>Technology decisions made early can affect cost, performance and scalability for years.</p>
+        <br>
+        <p>We combine product thinking with engineering to build software that solves today's problem without creating tomorrow's.</p>
+        <a href="#enquiry" class="intro-btn">Start a Development Project <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section" id="services">
+    <div class="section-label reveal">What we build</div>
+    <h2 class="section-heading services-heading reveal">Technology built around your product and business.</h2>
+
+    <div class="services-grid">
+      <article class="service-item reveal">
+        <div class="service-image">
+          <img src="assets/sas.png" alt="SaaS analytics dashboard">
+        </div>
+        <div class="service-body">
+          <div class="service-top"><div class="service-number">01</div><div class="service-arrow">↗</div></div>
+          <h3>SaaS &amp; Web Applications</h3>
+          <p>Custom applications designed around your workflows and customers.</p>
+        </div>
+      </article>
+
+      <article class="service-item reveal">
+        <div class="service-image">
+          <img src="assets/app.png" alt="Product team collaborating">
+        </div>
+        <div class="service-body">
+          <div class="service-top"><div class="service-number">02</div><div class="service-arrow">↗</div></div>
+          <h3>Mobile Applications</h3>
+          <p>Cross-platform mobile applications for iOS and Android.</p>
+        </div>
+      </article>
+
+      <article class="service-item reveal">
+        <div class="service-image">
+          <img src="assets/back.png" alt="Backend server infrastructure">
+        </div>
+        <div class="service-body">
+          <div class="service-top"><div class="service-number">03</div><div class="service-arrow">↗</div></div>
+          <h3>APIs &amp; Backend Systems</h3>
+          <p>Secure, scalable backend systems and integrations.</p>
+        </div>
+      </article>
+
+      <article class="service-item reveal">
+        <div class="service-image">
+          <img src="assets/dev.png" alt="Product development workshop">
+        </div>
+        <div class="service-body">
+          <div class="service-top"><div class="service-number">04</div><div class="service-arrow">↗</div></div>
+          <h3>Product Development</h3>
+          <p>From requirements and UX through development and launch.</p>
+        </div>
+      </article>
+
+      <article class="service-item reveal">
+        <div class="service-image">
+          <img src="assets/enhance.png" alt="Modern product workspace">
+        </div>
+        <div class="service-body">
+          <div class="service-top"><div class="service-number">05</div><div class="service-arrow">↗</div></div>
+          <h3>Existing Product Enhancement</h3>
+          <p>Improve, modernise or extend an existing application.</p>
+        </div>
+      </article>
+
+      <article class="service-item reveal">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80" alt="Software development code">
+        </div>
+        <div class="service-body">
+          <div class="service-top"><div class="service-number">06</div><div class="service-arrow">↗</div></div>
+          <h3>Technical Rebuilds</h3>
+          <p>Replace outdated technology or systems that have become difficult to maintain.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- NEW / EXISTING -->
+  <section class="new-existing">
+    <div class="section-label reveal">New or existing</div>
+    <h2 class="section-heading new-existing-heading reveal">Wherever your product is today, we'll meet you there.</h2>
+
+    <div class="split-grid">
+      <article class="split-card reveal">
+        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80" alt="Team launching a new product">
+        <div class="split-content">
+          <div class="split-tag">New</div>
+          <h3>Building your first product?</h3>
+          <p>We'll help you move from product definition to a working, scalable first release.</p>
+        </div>
+      </article>
+
+      <article class="split-card reveal">
+        <img src="assets/already.png" alt="Established business workspace">
+        <div class="split-content">
+          <div class="split-tag">Existing</div>
+          <h3>Already have a product?</h3>
+          <p>We'll help fix, modernise, extend or rebuild the parts that are holding you back.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process-section" id="process">
+    <div class="section-label reveal">How we work</div>
+    <h2 class="section-heading process-heading reveal">Understand → Design → Build → Test → Launch → Improve</h2>
+
+    <div class="process-grid">
+      <article class="process-card reveal">
+        <div class="process-image"><img src="assets/understand.png" alt="Discovery workshop"></div>
+        <div class="process-body">
+          <div class="process-kicker">DISCOVERY</div><div class="process-number">01</div>
+          <h3>Understand</h3>
+          <p>Understand the product, users and business goals.</p>
+          <div class="tags"><span>Goals</span><span>Audience</span></div>
+        </div>
+      </article>
+
+      <article class="process-card reveal">
+        <div class="process-image"><img src="assets/design.png" alt="Product planning meeting"></div>
+        <div class="process-body">
+          <div class="process-kicker">STRUCTURE</div><div class="process-number">02</div>
+          <h3>Design</h3>
+          <p>Shape the experience, workflows and technical direction.</p>
+          <div class="tags"><span>UX Flow</span><span>Architecture</span></div>
+        </div>
+      </article>
+
+      <article class="process-card reveal">
+        <div class="process-image"><img src="assets/builda.png" alt="Interface design on screen"></div>
+        <div class="process-body">
+          <div class="process-kicker">BUILD</div><div class="process-number">03</div>
+          <h3>Build</h3>
+          <p>Develop the product with scalable, maintainable engineering.</p>
+          <div class="tags"><span>Development</span><span>Performance</span></div>
+        </div>
+      </article>
+
+      <article class="process-card reveal">
+        <div class="process-image"><img src="assets/test.png" alt="Team testing a product"></div>
+        <div class="process-body">
+          <div class="process-kicker">TEST</div><div class="process-number">04</div>
+          <h3>Test</h3>
+          <p>Validate quality, performance and real-world behaviour.</p>
+          <div class="tags"><span>QA</span><span>Testing</span></div>
+        </div>
+      </article>
+
+      <article class="process-card reveal">
+        <div class="process-image"><img src="assets/lunch.png" alt="Developer preparing a product launch"></div>
+        <div class="process-body">
+          <div class="process-kicker">LAUNCH</div><div class="process-number">05</div>
+          <h3>Launch</h3>
+          <p>Release the product and get it into the hands of users.</p>
+          <div class="tags"><span>Optimise</span><span>Go Live</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <img class="cta-bg" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1800&q=80" alt="">
+    <div class="cta-content reveal">
+      <h2>Have a product that needs building?<br>Let's talk about what you're trying to achieve.</h2>
+      <a href="#enquiry" class="cta-btn">Start a Development Project <span>→</span></a>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="enquiry-section" id="enquiry">
+    <div class="enquiry-wrapper">
+      <div class="enquiry-intro reveal">
+        <div class="section-label">Start a project</div>
+        <h2>Tell us what you're building.</h2>
+        <p>Whether you're launching something new or improving an existing digital product, tell us a little about your project and we'll get back to you.</p>
+      </div>
+
+      <form class="enquiry-form reveal" action="https://formsubmit.co/info@turtixdigital.com" method="POST">
+        <input type="hidden" name="_subject" value="New Turtix Digital enquiry">
+        <input type="hidden" name="_captcha" value="false">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX">
+          </div>
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" placeholder="Company name">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="service">What do you need?</label>
+          <select id="service" name="service" required>
+            <option value="">Select a service</option>
+            <option>SaaS & Web Applications</option>
+            <option>Mobile Applications</option>
+            <option>APIs & Backend Systems</option>
+            <option>Product Development</option>
+            <option>Existing Product Enhancement</option>
+            <option>Technical Rebuild</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Tell us about your project</label>
+          <textarea id="message" name="message" rows="6" placeholder="Tell us about your business, project or idea..." required></textarea>
+        </div>
+
+        <button type="submit" class="form-submit">Send Enquiry <span>→</span></button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div>© 2026 <strong>Turtix Digital Solutions Pvt.Ltd.</strong></div>
+  <div>Innovate | Build | Scale.</div>
+</footer>
+
+<script>
+  const revealItems = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealItems.forEach((item, index) => {
+    item.style.transitionDelay = `${Math.min(index * 35, 280)}ms`;
+    observer.observe(item);
+  });
+</script>
+
+</body>
+</html>
