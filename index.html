@@ -34,7 +34,7 @@
   }
   .nav-links a {
     color: #ffffff;
-    font-size: 18px !important;
+    font-size: 16px !important;
     font-family: "Bricolage Grotesque", sans-serif !important;
     letter-spacing: 0.00em !important;
     gap:2px !important;
@@ -70,7 +70,7 @@ body {
 
 /* Navigation */
 .nav-links a {
-    font-size: 18px !important;
+    font-size: 16px !important;
 }
 
 /* Headings */
@@ -173,7 +173,7 @@ footer a {
     height: 2px;
     background: #d6a84f;
     transition: width 0.3s ease;}
-.nav-links a{font-size:18px !important;color:var(--paper);opacity:0.82;transition:opacity .2s; word-spacing: -3px !important;}
+.nav-links a{font-size:16px !important;color:var(--paper);opacity:0.82;transition:opacity .2s; word-spacing: -3px !important;}
 .nav-links a:hover{opacity:1;}
 .nav-links a:hover {
     color:#d6a84f;
@@ -201,8 +201,8 @@ footer a {
 
   .capability-strip{margin-top:64px;border-top:1px solid var(--line-dim);padding:30px 0;}
   .cap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:left;}
-  .cap-item .cap-name{font-family:var(--display);font-weight:600;font-size:15.5px;color:var(--white);}
-  .cap-item .cap-sub{font-family:var(--mono);font-size:11.5px;color:var(--brand-light);opacity:0.75;margin-top:6px;letter-spacing:0.02em;}
+  .cap-item .cap-name{font-family:var(--display);font-weight:700;font-size:21px;color:var(--white);margin-left: 2px;}
+  .cap-item .cap-sub{font-family:var(--mono);font-size:12px;color:var(--brand-light);opacity:0.75;margin-top:6px;letter-spacing:0.02em;}
 
   section{padding:96px 0;}
   .section-head{max-width:660px;margin-bottom:52px;}
@@ -2241,7 +2241,7 @@ h6,
 .nav-links a,
 .nav-links .nav-cta {
     font-family: "Bricolage Grotesque", sans-serif !important;
-    font-size: 18px !important;
+    font-size: 16px !important;
     font-weight: 400 !important;
     line-height: 1.2 !important;
     letter-spacing: -0.2px !important;
@@ -2277,7 +2277,7 @@ h6,
     align-items: center !important;
     justify-content: center !important;
 
-    padding: 16px 30px !important;
+    padding: 6px 14px !important;
 
     border: 1px solid #d99532 !important;
     border-radius: 2px !important;
@@ -2412,7 +2412,7 @@ img, svg, video {
 @media (min-width: 601px) and (max-width: 980px) {
   .nav {
     width: calc(100% - 40px) !important;
-    min-height: 64px !important;
+    min-height: 58px !important;
   }
 
   /* IMPORTANT: final nav override must not force desktop links open */
@@ -2449,7 +2449,7 @@ img, svg, video {
   .nav {
     width: calc(100% - 28px) !important;
     padding: 10px 0 !important;
-    min-height: 60px !important;
+    min-height: 58px !important;
   }
 
   .logo {
@@ -2609,11 +2609,12 @@ img, svg, video {
   }
 
   .cap-item .cap-name {
-    font-size: 16px !important;
+    font-size: 21px !important;
+
   }
 
   .cap-item .cap-sub {
-    font-size: 10px !important;
+    font-size: 12px !important;
     line-height: 1.5 !important;
   }
 
@@ -2700,7 +2701,8 @@ img, svg, video {
   }
 
   .cap-item .cap-name {
-    font-size: 15px !important;
+    font-size: 21px !important;
+    
   }
 }
 
@@ -2737,6 +2739,439 @@ img, svg, video {
     margin-top: 30px !important;
   }
 }
+/* =========================================
+   REDUCE HEADER / NAVBAR HEIGHT
+   ========================================= */
+
+.nav {
+    padding: 8px 32px !important;
+    min-height: 0 !important;
+}
+
+.logo {
+    min-height: 0 !important;
+}
+
+.nav-links .nav-cta {
+    padding: 10px 24px !important;
+}
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 980px) {
+    .nav {
+        padding: 7px 20px !important;
+        min-height: 0 !important;
+    }
+}
+
+/* Android + iPhone */
+@media (max-width: 600px) {
+    .nav {
+        padding: 6px 14px !important;
+        min-height: 0 !important;
+    }
+
+    .logo img {
+        width: 32px !important;
+        max-width: 32px !important;
+    }
+
+    .logo {
+        font-size: 21px !important;
+    }
+
+    .menu-toggle {
+        width: 38px !important;
+        height: 38px !important;
+        font-size: 23px !important;
+    }
+}
+
+.cap-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 0 !important;
+    width: 100% !important;
+}
+
+.cap-item {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.cap-item .cap-name {
+    text-align: center !important;
+    font-weight: 700 !important;
+}
+
+.cap-item .cap-sub {
+    text-align: center !important;
+}
+/* ===== CORE CAPABILITIES - EQUAL SPACING ===== */
+
+.cap-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    width: 100% !important;
+    gap: 0 !important;
+    align-items: center !important;
+    justify-items: center !important;
+}
+
+.cap-item {
+    width: 100% !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.cap-item .cap-name {
+    font-family: "Bricolage Grotesque", sans-serif !important;
+    position: static !important;
+    left: auto !important;
+    width: 100% !important;
+    text-align: center !important;
+    font-weight: 700 !important;
+    margin: 0 !important;
+}
+
+.cap-item .cap-sub {
+    width: 100% !important;
+    text-align: center !important;
+    margin: 0 !important;
+}
+/* ===== CAPABILITIES — EQUAL SPACING ===== */
+
+.cap-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    width: 100% !important;
+    gap: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.cap-item {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    text-align: center !important;
+    box-sizing: border-box !important;
+}
+
+.cap-item .cap-name {
+    position: static !important;
+    left:10px !important;
+    right: auto !important;
+    transform: none !important;
+
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    text-align: center !important;
+
+    font-family: "Bricolage Grotesque", sans-serif !important;
+    font-weight: 700 !important;
+}
+
+.cap-item .cap-sub {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    text-align: center !important;
+}
+/* =========================================
+   FINAL FIX — EQUAL CAPABILITY SPACING
+   ========================================= */
+
+.cap-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 0 !important;
+    align-items: center !important;
+}
+
+.cap-item {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    text-align: center !important;
+}
+
+.cap-item .cap-name {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    text-align: center !important;
+
+    font-family: "Bricolage Grotesque", sans-serif !important;
+    font-size: 21px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+}
+
+.cap-item .cap-sub {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+
+    width: 100% !important;
+    margin: 6px 0 0 !important;
+    padding: 0 !important;
+
+    text-align: center !important;
+}
+
+
+/* =========================================
+   MOBILE — KEEP ITEMS CLEAN AND SEPARATE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .cap-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+    }
+
+    .cap-item {
+        width: 100% !important;
+    }
+
+    .cap-item .cap-name {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .cap-item .cap-sub {
+        width: 100% !important;
+        text-align: center !important;
+    }
+}
+/* ===== CORE CAPABILITIES — PERFECT EQUAL SPACING ===== */
+
+.cap-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 0 !important;
+
+    justify-items: stretch !important;
+    align-items: center !important;
+}
+
+.cap-item {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    text-align: center !important;
+    box-sizing: border-box !important;
+}
+
+.cap-item .cap-name {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+
+    text-align: center !important;
+
+    font-family: "Bricolage Grotesque", sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 21px !important;
+    color: var(--white) !important;
+}
+
+.cap-item .cap-sub {
+    width: 100% !important;
+    margin-top: 6px !important;
+    padding: 0 !important;
+
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+
+    text-align: center !important;
+}
+.cap-grid {
+    position: relative !important;
+    left: -35px !important;
+}
+/* =========================================
+   CAPABILITY STRIP - FINAL RESPONSIVE FIX
+   ========================================= */
+
+.capability-strip {
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.cap-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 0 !important;
+    width: 100% !important;
+}
+
+.cap-item {
+    min-width: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+}
+
+.cap-item .cap-name {
+    width: 100% !important;
+    text-align: center !important;
+    font-family: "Bricolage Grotesque", sans-serif !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: static !important;
+    left: auto !important;
+}
+
+.cap-item .cap-sub {
+    width: 100% !important;
+    text-align: center !important;
+    margin: 6px 0 0 !important;
+    padding: 0 !important;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .capability-strip {
+        width: calc(100% - 24px) !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 22px 0 !important;
+    }
+
+    .cap-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        column-gap: 0 !important;
+        row-gap: 22px !important;
+    }
+
+    .cap-item {
+        width: 100% !important;
+        min-width: 0 !important;
+        padding: 0 8px !important;
+    }
+
+    .cap-item .cap-name {
+        width: 100% !important;
+        font-size: 17px !important;
+        font-weight: 700 !important;
+        text-align: center !important;
+        white-space: normal !important;
+    }
+
+    .cap-item .cap-sub {
+        display: none !important;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    .capability-strip {
+        width: calc(100% - 20px) !important;
+        padding: 20px 0 !important;
+    }
+
+    .cap-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        row-gap: 20px !important;
+    }
+
+    .cap-item {
+        padding: 0 5px !important;
+    }
+
+    .cap-item .cap-name {
+        font-size: 16px !important;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+   ========================================= */
+
+@media (max-width: 340px) {
+
+    .cap-item .cap-name {
+        font-size: 15px !important;
+    }
+}
 </style>
 
 </head>
@@ -2753,8 +3188,8 @@ img, svg, video {
     </div> 
 </a>
     <div class="nav-links">
-      <a href="#paths">Which one are you</a>
-      <a href="#stages">Where you start</a>
+      <a href="#paths">Who We Help</a>
+      <a href="#stages">How We Work</a>
       <a href="#services">Services</a>
       <a href="#work">Work</a>
       <a href="#contact" class="nav-cta">Build your tech</a>
@@ -2776,13 +3211,28 @@ img, svg, video {
       </div>
     </div>
     <div class="wrap capability-strip">
-      <div class="cap-grid">
-        <div class="cap-item"><div class="cap-name">Full-stack</div><div class="cap-sub">Web &amp; app engineering</div></div>
-        <div class="cap-item"><div class="cap-name">Zero-to-one</div><div class="cap-sub">Non-technical founder enablement</div></div>
-        <div class="cap-item"><div class="cap-name">Agile &amp; transparent</div><div class="cap-sub">Clear roadmaps, clear pricing</div></div>
-        <div class="cap-item"><div class="cap-name">Scalable tech</div><div class="cap-sub">Production-ready architecture</div></div>
-      </div>
+  <div class="cap-grid">
+    <div class="cap-item">
+      <div class="cap-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Full-stack</div>
+      <div class="cap-sub"></div>
     </div>
+
+    <div class="cap-item">
+      <div class="cap-name">Zero-to-one</div>
+      <div class="cap-sub"></div>
+    </div>
+
+    <div class="cap-item">
+      <div class="cap-name">Agile &amp; transparent</div>
+      <div class="cap-sub"></div>
+    </div>
+
+    <div class="cap-item">
+      <div class="cap-name">Scalable tech</div>
+      <div class="cap-sub"></div>
+    </div>
+  </div>
+</div>
   </section>
 
   <section class="blueprint-bg" id="paths">
