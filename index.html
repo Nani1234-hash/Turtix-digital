@@ -3179,6 +3179,24 @@ img, svg, video {
 .capability-strip {
     transform: translateX(15px) !important;
 }
+  /* Make the capability top line touch both screen edges */
+.capability-strip {
+    position: relative !important;
+    border-top: none !important;
+}
+
+.capability-strip::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 50% !important;
+    width: 100vw !important;
+    height: 1px !important;
+    background: rgba(255, 255, 255, 0.18) !important;
+    transform: translateX(-50%) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
 </style>
 
 </head>
