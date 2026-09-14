@@ -3197,6 +3197,38 @@ img, svg, video {
     margin: 0 !important;
     padding: 0 !important;
 }
+  /* ===== CAPABILITY STRIP — MOBILE LEFT EDGE FIX ===== */
+
+@media (max-width: 768px) {
+
+    .capability-strip {
+        width: 100% !important;
+        max-width: none !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .capability-strip .cap-grid {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .capability-strip::before {
+        left: 0 !important;
+        width: 100% !important;
+    }
+
+    .capability-strip .cap-item:first-child {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
+
+}
 </style>
 
 </head>
