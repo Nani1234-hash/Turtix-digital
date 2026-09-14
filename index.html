@@ -3179,6 +3179,26 @@ img, svg, video {
 .capability-strip {
     transform: translateX(15px) !important;
 }
+  /* FIX: capability section must align exactly with hero image */
+.capability-strip {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+}
+
+.capability-strip .cap-grid {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+}
 </style>
 
 </head>
@@ -3217,7 +3237,7 @@ img, svg, video {
         <a href="#services" class="btn-ghost">Our core capabilities</a>
       </div>
     </div>
-    <div class="wrap capability-strip">
+    <div class="capability-strip">
   <div class="cap-grid">
     <div class="cap-item">
       <div class="cap-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Full-stack</div>
