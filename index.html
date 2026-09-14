@@ -3179,6 +3179,18 @@ img, svg, video {
 .capability-strip {
     transform: translateX(15px) !important;
 }
+  @media (max-width: 768px) {
+    .cap-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        column-gap: 8px !important;
+        row-gap: 10px !important;
+    }
+
+    .cap-item {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}
 
 
 </style>
