@@ -3233,6 +3233,18 @@ img, svg, video {
 .capability-strip {
     transform: translateX(12px) !important;
 }
+  /* Move the complete capability text section slightly right */
+.capability-strip .cap-grid {
+    position: relative !important;
+    left: 10px !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .capability-strip .cap-grid {
+        left: 8px !important;
+    }
+}
 </style>
 
 </head>
